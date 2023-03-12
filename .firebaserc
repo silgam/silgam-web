@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "silgam-app"
+  },
+  "targets": {
+    "silgam-app": {
+      "hosting": {
+        "dev": [
+          "silgam-dev"
+        ]
+      }
+    }
   }
 }
