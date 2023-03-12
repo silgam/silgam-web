@@ -42,11 +42,9 @@ function App() {
   return (
     <div className="web">
       <nav>
-        {/* <div className="header-area-down"> */}
         <div className={showHeader ? "header-content-visible" : "header-content-invisible"}>
           <img className='logo' src={icon} />
           {scrollNum}
-          {/* <img className={showHeader ? 'logo' : 'logo-transparent'} src={showHeader ? icon : transparentIcon} /> */}
           <div className="header-nav-btn-row">
             <button className='hader-nav-btn'>다운로드</button>
             <button className='hader-nav-btn'>설치</button>
@@ -54,8 +52,6 @@ function App() {
             <button className='hader-nav-btn'>문의</button>
           </div>
         </div>
-        {/* <div className='header-blur'></div> */}
-        {/* </div> */}
       </nav>
       <main>
         <section>
