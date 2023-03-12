@@ -17,5 +17,5 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SILGAM_APP }}'
           projectId: silgam-app
-          target: silgam-dev
+          target: dev
           channelId: live
