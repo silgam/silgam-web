@@ -12,6 +12,7 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
+    'react/react-in-jsx-scope': 'off',
     semi: ['error', 'always'],
     '@typescript-eslint/semi': ['error', 'always']
   }
