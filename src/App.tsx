@@ -3,10 +3,10 @@ import './App.css';
 
 // images
 import appStore from './images/app-store.png';
-import appIcon from './Images/app_icon.png';
-import icon from './Images/app_icon.svg';
-import firstMockup from './Images/mockup_simulation.png';
-import playStore from './Images/play-store.png';
+import appIcon from './images/app_icon.png';
+import icon from './images/app_icon.svg';
+import firstMockup from './images/mockup_simulation.png';
+import playStore from './images/play-store.png';
 
 function App (): JSX.Element {
   const [scrollNum, setScrollNum] = useState(0);
