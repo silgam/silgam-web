@@ -1,0 +1,14 @@
+.terms {
+  height: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  color: black;
+}
+
+.terms-main {
+  color: black;
+}

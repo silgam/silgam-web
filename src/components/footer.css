@@ -1,0 +1,27 @@
+.footer {
+  background-color: #1e1e1e;
+  color: rgb(222, 222, 222);
+  margin-top: 0;
+  padding: 24px 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-row {
+  color: white;
+  /* display: flex; */
+  flex-direction: row;
+  /* background-color: red; */
+}
+
+.logo-row a img {
+  width: 30px;
+  margin: 0 10px 5px 10px;
+}
+
+.footer h6 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 4px 0 4px 0;
+}
