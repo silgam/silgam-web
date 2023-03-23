@@ -19,8 +19,8 @@ function Footer (): JSX.Element {
           <a href='https://www.instagram.com/silgam.app/' target='_blank' rel="noreferrer"><img src={instagramLogo} alt='instagram-logo'/></a>
         </div>
         <h6><span onClick={() => { navigate('/terms'); }}>서비스 이용약관</span> | <span onClick={() => { navigate('/privacy'); }}>개인정보 처리방침</span></h6>
-        <h6>상호: 실감 | 대표: 민승현 | 전화번호: 0502-1932-3147 | 이메일: seunghyun@silgam.app</h6>
-        <h6>주소: 강원도 속초시 미시령로3337번길 20, 105동 1604호(교동, 명지미래힐아파트)</h6>
+        <h6>상호: 실감 | 대표: 민승현 | 전화번호: 0502-1932-3147 | 이메일: contact@silgam.app</h6>
+        <h6>주소: 강원도 속초시 미시령로3337번길 20</h6>
         <h6>사업자등록번호 101-79-00366</h6>
     </div>
   );
