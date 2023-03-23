@@ -76,8 +76,8 @@ function Mainpage (): JSX.Element {
             <div className="download-button-row">
               <img className="app-icon" src={appIcon} alt="app-icon" />
               <div className="store-btn-row">
-                <a href=''><img className="play-store-btn" src={playStore} alt="play-store-download-button" /></a>
-                <a href=''><img className="app-store-btn" src={appStore} alt="app-store-download-button" /></a>
+                <a href='https://play.google.com/store/apps/details?id=com.seunghyun.silgam'><img className="play-store-btn" src={playStore} alt="play-store-download-button" /></a>
+                <a href='https://apps.apple.com/us/app/실전-감각-실감/id1598576852'><img className="app-store-btn" src={appStore} alt="app-store-download-button" /></a>
               </div>
             </div>
           </div>
