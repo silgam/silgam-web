@@ -35,21 +35,23 @@ function Footer(): JSX.Element {
         </a>
       </div>
       <h6>
-        <span
+        <button
+          type="button"
           onClick={() => {
             navigate("/terms");
           }}
         >
           서비스 이용약관
-        </span>{" "}
+        </button>{" "}
         |{" "}
-        <span
+        <button
+          type="button"
           onClick={() => {
             navigate("/privacy");
           }}
         >
           개인정보 처리방침
-        </span>
+        </button>
       </h6>
       <h6>
         상호: 실감 | 대표: 민승현 | 전화번호: 0502-1932-3147 | 이메일:

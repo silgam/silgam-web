@@ -65,7 +65,7 @@ function Mainpage(): JSX.Element {
               showHeader ? "header-content-visible" : "header-content-invisible"
             }
           >
-            <img className="logo" src={icon} />
+            <img className="logo" src={icon} alt="logo" />
             <div className="header-nav-btn-row">
               {/* buttons of header below */}
               {/* <button className="hader-nav-btn">다운로드</button>
@@ -222,7 +222,7 @@ function Mainpage(): JSX.Element {
             showHeader ? "header-content-visible" : "header-content-invisible"
           }
         >
-          <img className="logo" src={icon} />
+          <img className="logo" src={icon} alt="logo" />
           <div className="header-nav-btn-row">
             {/* buttons of header below */}
             {/* <button className="hader-nav-btn">다운로드</button>
