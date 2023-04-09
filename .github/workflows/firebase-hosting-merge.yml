@@ -19,3 +19,5 @@ jobs:
           projectId: silgam-app
           target: dev
           channelId: live
+        env:
+          FIREBASE_CLI_EXPERIMENTS: webframeworks
