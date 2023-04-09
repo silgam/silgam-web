@@ -1,4 +1,3 @@
-// CSS
 import "./terms.css";
 
 function Terms(): JSX.Element {
@@ -158,7 +157,7 @@ function Terms(): JSX.Element {
               통신판매업 신고번호, 서비스 이용약관 및 개인정보 처리방침 등을
               이용자가 쉽게 알 수 있도록 회사의 웹사이트에 게시합니다.
             </p>
-            <p id="c1047c8d-b560-4639-b4d5-34967b36a011" className=""></p>
+            <p id="c1047c8d-b560-4639-b4d5-34967b36a011" className="" />
             <p id="72ca0523-4b21-4271-8c3c-c3fd3f6f429a" className="">
               <br />
             </p>
@@ -225,7 +224,7 @@ function Terms(): JSX.Element {
                 있습니다.
               </li>
             </ol>
-            <p id="4dba1975-1c2b-417a-bcd7-136625881fc7" className=""></p>
+            <p id="4dba1975-1c2b-417a-bcd7-136625881fc7" className="" />
             <p id="9fff0fc9-3476-4a20-af07-b09fcbc98feb" className="">
               <br />
             </p>
@@ -257,7 +256,7 @@ function Terms(): JSX.Element {
                 영향을 미치는 사항에 대해서는 전항과 같은 방법으로 통지합니다.
               </li>
             </ol>
-            <p id="3a8a8a79-0a00-4921-a2c4-ecb09a4e9d18" className=""></p>
+            <p id="3a8a8a79-0a00-4921-a2c4-ecb09a4e9d18" className="" />
             <p id="d8d9212e-68d7-429d-92ab-2fef665f8aa5" className="">
               <br />
             </p>
@@ -288,7 +287,7 @@ function Terms(): JSX.Element {
                 부담하지 않습니다.
               </li>
             </ol>
-            <p id="eac7b395-9e0b-4566-891f-c6728896995c" className=""></p>
+            <p id="eac7b395-9e0b-4566-891f-c6728896995c" className="" />
             <p id="513523c5-8f17-4dd9-9165-b193ae8efe99" className="">
               <br />
             </p>
@@ -328,7 +327,7 @@ function Terms(): JSX.Element {
                 대해서는 책임을 지지 않습니다.
               </li>
             </ol>
-            <p id="71c0673f-0868-4381-a91d-e94aa209bbdf" className=""></p>
+            <p id="71c0673f-0868-4381-a91d-e94aa209bbdf" className="" />
             <p id="9600a9b0-448f-443b-b948-ac94ad21cd7a" className="">
               <br />
             </p>
@@ -339,7 +338,7 @@ function Terms(): JSX.Element {
               본 약관에서 정하지 아니한 사항에 대해서는 관계법령 또는 회사가
               정한 개별 서비스의 부속 약관, 또는 상관례에 따릅니다.{" "}
             </p>
-            <p id="28b26a63-76af-4a4b-97e1-e17f670f4c7f" className=""></p>
+            <p id="28b26a63-76af-4a4b-97e1-e17f670f4c7f" className="" />
             <p id="45025d50-aa1d-4c5c-a875-6f01ad112bdd" className="">
               <br />
             </p>
@@ -392,7 +391,7 @@ function Terms(): JSX.Element {
                 손해를 배상합니다.
               </li>
             </ol>
-            <p id="1c30da78-5862-448c-b90f-0740184ff033" className=""></p>
+            <p id="1c30da78-5862-448c-b90f-0740184ff033" className="" />
             <p id="0d02ad41-c67d-43df-a430-5ec693b4a60a" className="">
               <br />
             </p>
@@ -489,7 +488,7 @@ function Terms(): JSX.Element {
                 </ol>
               </li>
             </ol>
-            <p id="4e156ca2-51da-43a4-b9ef-03dd2daae9a3" className=""></p>
+            <p id="4e156ca2-51da-43a4-b9ef-03dd2daae9a3" className="" />
             <p id="1be4f71e-30ae-4ae3-b4d4-e430fdd9310f" className="">
               <br />
             </p>
@@ -575,7 +574,7 @@ function Terms(): JSX.Element {
                 승낙을 유보할 수 있습니다.
               </li>
             </ol>
-            <p id="1959ea3f-9074-4878-90ca-12388c97f660" className=""></p>
+            <p id="1959ea3f-9074-4878-90ca-12388c97f660" className="" />
             <p id="a8098449-cd07-489c-9ebf-8bc1ca20a817" className="">
               <br />
             </p>
@@ -648,7 +647,7 @@ function Terms(): JSX.Element {
                 회원이 인지할 수 있는 방법으로 공지합니다.
               </li>
             </ol>
-            <p id="88b6f0e5-f4d5-400f-9be8-ace204420839" className=""></p>
+            <p id="88b6f0e5-f4d5-400f-9be8-ace204420839" className="" />
             <p id="e43a60de-103d-4996-8f4b-a4f001ba49d2" className="">
               <br />
             </p>
@@ -702,7 +701,7 @@ function Terms(): JSX.Element {
                 있습니다.
               </li>
             </ol>
-            <p id="18602179-5db8-4b90-be75-49f814c1edcd" className=""></p>
+            <p id="18602179-5db8-4b90-be75-49f814c1edcd" className="" />
             <p id="79b8e49e-7f33-435e-9fdf-1e8e194b8aea" className="">
               <br />
             </p>
@@ -772,7 +771,7 @@ function Terms(): JSX.Element {
                 않습니다.
               </li>
             </ol>
-            <p id="c03acc41-6b39-4b8e-b1d5-619cb589889b" className=""></p>
+            <p id="c03acc41-6b39-4b8e-b1d5-619cb589889b" className="" />
             <p id="1641ce33-8776-4adc-91b6-8b20300590f5" className="">
               <br />
             </p>
@@ -837,7 +836,7 @@ function Terms(): JSX.Element {
                 등을 사용하여 유료서비스를 이용할 수 있습니다.
               </li>
             </ol>
-            <p id="71c6551d-ddee-45e5-8805-114f3fa603c7" className=""></p>
+            <p id="71c6551d-ddee-45e5-8805-114f3fa603c7" className="" />
             <p id="cb0df8a0-0050-4d61-870b-4edcb3114186" className="">
               <br />
             </p>
@@ -928,7 +927,7 @@ function Terms(): JSX.Element {
                 따릅니다.
               </li>
             </ol>
-            <p id="c9bb57cf-db9b-4b78-ba3c-c668c5579a9c" className=""></p>
+            <p id="c9bb57cf-db9b-4b78-ba3c-c668c5579a9c" className="" />
             <p id="33e23ace-e062-4573-9929-a5b5433d0e48" className="">
               <br />
             </p>
@@ -1032,7 +1031,7 @@ function Terms(): JSX.Element {
                 있습니다.
               </li>
             </ol>
-            <p id="dbb96960-4508-4346-96ee-ef092011d95e" className=""></p>
+            <p id="dbb96960-4508-4346-96ee-ef092011d95e" className="" />
             <p id="e9a89643-3665-46e6-b853-b1449e5eed0e" className="">
               <br />
             </p>
@@ -1079,7 +1078,7 @@ function Terms(): JSX.Element {
                 청약철회를 이유로 위약금 또는 손해배상을 청구하지 않습니다.
               </li>
             </ol>
-            <p id="1ce3524c-5f6a-4829-86b1-a9edcc9e136b" className=""></p>
+            <p id="1ce3524c-5f6a-4829-86b1-a9edcc9e136b" className="" />
             <p id="6d2d602d-21bd-4e26-a044-f128bf1c1cc7" className="">
               <br />
             </p>
@@ -1138,7 +1137,7 @@ function Terms(): JSX.Element {
                 시 회사는 회원의 회원자격을 상실하게 할 수 있습니다.
               </li>
             </ol>
-            <p id="1272ab0d-d9cb-4a04-bd6f-508153a7d668" className=""></p>
+            <p id="1272ab0d-d9cb-4a04-bd6f-508153a7d668" className="" />
             <p id="9ccd0013-ad6f-4e89-978e-13b89c5b9549" className="">
               <br />
             </p>
@@ -1278,7 +1277,7 @@ function Terms(): JSX.Element {
                 지지 않습니다.
               </li>
             </ol>
-            <p id="5007726c-ea91-4232-9625-55ace8c743eb" className=""></p>
+            <p id="5007726c-ea91-4232-9625-55ace8c743eb" className="" />
             <p id="532aec75-6de9-4fa7-916f-037afc0e19dd" className="">
               <br />
             </p>

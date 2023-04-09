@@ -1,9 +1,7 @@
-import { useNavigate } from "react-router-dom";
-
-// CSS
 import "./footer.css";
 
-// Image
+import { useNavigate } from "react-router-dom";
+
 import instagramLogo from "../images/sns_instagram.svg";
 import kakaotalkLogo from "../images/sns_kakaotalk.svg";
 import supportLogo from "../images/sns_support.svg";

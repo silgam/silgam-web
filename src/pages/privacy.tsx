@@ -1,4 +1,3 @@
-// CSS
 import "./privacy.css";
 
 function Privacy(): JSX.Element {
@@ -796,7 +795,7 @@ function Privacy(): JSX.Element {
               애플리케이션 또는 웹사이트에 공지합니다.
             </p>
           </div>
-          <p id="adceb8e6-27a6-45c7-85ba-e4b3d438426c" className=""></p>
+          <p id="adceb8e6-27a6-45c7-85ba-e4b3d438426c" className="" />
         </div>
       </article>
     </div>

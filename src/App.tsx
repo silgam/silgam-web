@@ -1,10 +1,10 @@
 // Components
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import Footer from "./components/footer";
 import Mainpage from "./pages/mainpage";
 import Privacy from "./pages/privacy";
 import Terms from "./pages/terms";
-
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App(): JSX.Element {
   return (
