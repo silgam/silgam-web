@@ -1,3 +1,9 @@
+@import url("https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css");
+
+* {
+  font-family: "NanumSquare";
+}
+
 nav {
   /* position: fixed; */
   width: 100%;
@@ -62,7 +68,7 @@ nav {
 
 .mainpage-main {
   padding-top: 40px;
-  background: linear-gradient(to bottom right, #1c2349, #000637);
+  background: linear-gradient(to bottom right, #ffffff, #cddcff);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,8 +83,13 @@ section {
   align-items: center;
 }
 
+.section-main-title {
+  display: flex;
+  flex-direction: row;
+}
+
 .section-main-area {
-  color: white;
+  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,23 +109,29 @@ section {
   margin-top: 3px;
   font-size: 60px;
   font-weight: 300;
+  color: black;
 }
 
 .section-desc-area {
   display: flex;
-  color: white;
+  color: black;
   height: 30rem;
-  width: 75%;
+  width: fit-content;
 }
 
 .section-desc-area h1 {
+  color: black;
   font-size: 40px;
   line-height: 45px;
+  font-weight: 800;
+  width: fit-content;
 }
 
 .section-desc-area h4 {
+  color: black;
   font-size: 20px;
   font-weight: 400;
+  width: 450px;
 }
 
 .app-icon {
@@ -207,4 +224,53 @@ footer h6 {
   font-size: 14px;
   font-weight: 500;
   margin: 4px 0 4px 0;
+}
+
+@media (max-width: 500px) {
+  .section-main-area h2 {
+    font-size: 25px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 3px;
+  }
+
+  .section-main-area h1 {
+    margin-top: 3px;
+    font-size: 50px;
+    font-weight: 300;
+  }
+
+  .play-store-btn {
+    width: 9.5rem;
+    margin-right: 0.25rem;
+  }
+
+  .app-store-btn {
+    width: 8.5rem;
+    margin-left: 0.25rem;
+  }
+
+  .section-desc-area {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    height: 30rem;
+    width: 75%;
+  }
+
+  .description-area-right {
+    width: 100%;
+  }
+
+  .description-area-left {
+    width: 100%;
+  }
+
+  /* section {
+    height: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } */
 }
