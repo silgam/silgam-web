@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { BsChevronCompactDown } from "react-icons/bs";
+import TextTransition from "react-text-transition";
 
 import appleIcon from "../../../public/static/images/icons/apple_icon.png";
 import googlePlayIcon from "../../../public/static/images/icons/google_play_icon.png";
@@ -14,6 +16,35 @@ import * as Styled from "./index.styled";
 import MockupSection from "./MockupSection";
 
 export default function HomePage() {
+  const noiseElements = [
+    "시험지 넘기는",
+    "글씨 쓰는",
+    "지우개로 지우는",
+    "샤프 딸깍하는",
+    "기침",
+    "한숨",
+    "의자 삐걱이는",
+    "코 훌쩍이는",
+    "다리 떠는",
+    "옷 부딪히는",
+    "의자 움직이는",
+    "뭔가 바닥에 떨어지는",
+  ].map((text, index) => (
+    <div key={index}>
+      <Bold>{text}</Bold> 소리
+    </div>
+  ));
+
+  const [noiseElementIndex, setNoiseElementIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(
+      () => setNoiseElementIndex((index) => index + 1),
+      700,
+    );
+    return () => clearTimeout(intervalId);
+  }, []);
+
   return (
     <Styled.HomePageContainer>
       <Styled.FullHeightSection>
@@ -68,8 +99,9 @@ export default function HomePage() {
         title="랜덤재생 소음 ASMR"
         description={
           <>
-            <Bold>다리 떠는</Bold> 소리, <Bold>시험지 넘기는</Bold> 소리,{" "}
-            <Bold>기침</Bold> 소리... <br />
+            <TextTransition>
+              {noiseElements[noiseElementIndex % noiseElements.length]}
+            </TextTransition>
             랜덤으로 재생되는 소음의 빈도를 조절하며 <br />
             다양한 난이도로 실전 모의고사를 연습해보세요.
           </>

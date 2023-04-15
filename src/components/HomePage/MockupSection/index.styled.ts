@@ -42,7 +42,7 @@ export const SectionTitle = styled.h2`
   font-weight: 700;
 `;
 
-export const SectionDescription = styled.p`
+export const SectionDescription = styled.div`
   font-size: 22px;
   line-height: 1.5;
   color: ${({ theme }) => theme.color.grey[800]};
