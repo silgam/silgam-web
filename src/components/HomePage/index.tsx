@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { createRef, useEffect, useState } from "react";
 import { BsChevronCompactDown } from "react-icons/bs";
 import TextTransition from "react-text-transition";
 
@@ -36,6 +36,7 @@ export default function HomePage() {
   ));
 
   const [noiseElementIndex, setNoiseElementIndex] = useState(0);
+  const clockMockupSectionRef = createRef<HTMLDivElement>();
 
   useEffect(() => {
     const intervalId = setInterval(
@@ -44,6 +45,15 @@ export default function HomePage() {
     );
     return () => clearTimeout(intervalId);
   }, []);
+
+  const onClickChevronDown = () => {
+    if (clockMockupSectionRef.current) {
+      clockMockupSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
   return (
     <Styled.HomePageContainer>
@@ -66,7 +76,7 @@ export default function HomePage() {
             </Styled.DownloadButton>
           </Link>
         </Styled.DownloadButtonsContainer>
-        <Styled.ChevronDown>
+        <Styled.ChevronDown onClick={onClickChevronDown}>
           <motion.div
             initial={{ y: 0 }}
             animate={{ y: 6 }}
@@ -81,19 +91,22 @@ export default function HomePage() {
           </motion.div>
         </Styled.ChevronDown>
       </Styled.FullHeightSection>
-      <MockupSection
-        mockupSrc={clockMockup}
-        title="시험장 시뮬레이션"
-        description={
-          <>
-            과목별 시험 시간에 맞춰 표시되는 <Bold>아날로그 시계</Bold>, <br />
-            <Bold>백색소음</Bold> 및 실제 시험장과 동일한 <Bold>타종 소리</Bold>
-            로 <br />
-            <Bold>수능 시험장의 현장감</Bold>을 극대화할 수 있어요.
-          </>
-        }
-        grayBackground
-      />
+      <div ref={clockMockupSectionRef}>
+        <MockupSection
+          mockupSrc={clockMockup}
+          title="시험장 시뮬레이션"
+          description={
+            <>
+              과목별 시험 시간에 맞춰 표시되는 <Bold>아날로그 시계</Bold>,
+              <br />
+              <Bold>백색소음</Bold> 및 실제 시험장과 동일한{" "}
+              <Bold>타종 소리</Bold> 로 <br />
+              <Bold>수능 시험장의 현장감</Bold>을 극대화할 수 있어요.
+            </>
+          }
+          grayBackground
+        />
+      </div>
       <MockupSection
         mockupSrc={noiseSettingsMockup}
         title="랜덤재생 소음 ASMR"

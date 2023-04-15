@@ -56,6 +56,8 @@ export const DownloadButton = styled.div`
 export const ChevronDown = styled.div`
   position: absolute;
   bottom: 40px;
+  padding: 20px;
+  cursor: pointer;
 
   svg {
     color: rgba(0, 0, 0, 0.3);
