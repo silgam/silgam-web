@@ -16,7 +16,7 @@ export const HeaderContainer = styled.header<{ showBorder: boolean }>`
 `;
 
 export const HeaderContent = styled.div`
-  max-width: 1000px;
+  max-width: ${({ theme }) => theme.contentMaxWidth};
   display: flex;
   flex: 1;
   padding: 0 20px;

@@ -15,12 +15,17 @@ interface ColorPalette {
 
 declare module "styled-components" {
   export interface DefaultTheme {
-    header: {
-      height: string;
-    };
     color: {
       primary: string;
       grey: ColorPalette;
     };
+    header: {
+      height: string;
+    };
+    footer: {
+      backgroundColor: string;
+      textColor: string;
+    };
+    contentMaxWidth: string;
   }
 }

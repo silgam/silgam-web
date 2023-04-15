@@ -23,5 +23,7 @@ export const defaultTheme: DefaultTheme = {
   },
   footer: {
     backgroundColor: "#191b28",
+    textColor: color.grey[400],
   },
+  contentMaxWidth: "1050px",
 };

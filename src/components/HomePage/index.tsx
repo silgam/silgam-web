@@ -11,7 +11,7 @@ import clockMockup from "../../../public/static/images/mockups/clock.png";
 import noiseSettingsMockup from "../../../public/static/images/mockups/noise_settings.png";
 import recordDetailMockup from "../../../public/static/images/mockups/record_detail.png";
 import statsMockup from "../../../public/static/images/mockups/stats.png";
-import { Bold } from "../common/Text/index.styled";
+import { Bold, Superscript } from "../common/Text/index.styled";
 import * as Styled from "./index.styled";
 import MockupSection from "./MockupSection";
 
@@ -117,6 +117,7 @@ export default function HomePage() {
             </TextTransition>
             랜덤으로 재생되는 소음의 빈도를 조절하며 <br />
             다양한 난이도로 실전 모의고사를 연습해보세요.
+            <Superscript>1</Superscript>
           </>
         }
         rightImage
@@ -145,10 +146,18 @@ export default function HomePage() {
             <Bold>총 응시 시간</Bold>, 과목별 <Bold>성적 추이</Bold> 등에 대한
             <br />
             통계를 확인할 수 있어요.
+            <Superscript>2</Superscript>
           </>
         }
         rightImage
       />
+      <Styled.CommentsSection>
+        <Styled.CommentsContentWrapper>
+          1. 일부 소음은 실감 패스(유료 상품) 인앱결제 시 이용 가능합니다.
+          <br />
+          2. 통계 기능은 실감 패스(유료 상품) 인앱결제 시 이용 가능합니다.
+        </Styled.CommentsContentWrapper>
+      </Styled.CommentsSection>
     </Styled.HomePageContainer>
   );
 }

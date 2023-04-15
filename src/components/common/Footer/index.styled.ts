@@ -6,11 +6,11 @@ export const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: ${({ theme }) => theme.color.grey[300]};
+  color: ${({ theme }) => theme.footer.textColor};
   background-color: ${({ theme }) => theme.footer.backgroundColor};
   text-align: center;
   gap: 10px;
-  padding: 52px 80px;
+  padding: 40px 80px;
   font-size: 12px;
 `;
 

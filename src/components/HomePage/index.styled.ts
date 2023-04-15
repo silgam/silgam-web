@@ -63,3 +63,21 @@ export const ChevronDown = styled.div`
     color: rgba(0, 0, 0, 0.3);
   }
 `;
+
+export const CommentsSection = styled.div`
+  background-color: ${({ theme }) => theme.footer.backgroundColor};
+  display: flex;
+  justify-content: center;
+`;
+
+export const CommentsContentWrapper = styled.div`
+  width: 100%;
+  max-width: ${({ theme }) => theme.contentMaxWidth};
+  color: ${({ theme }) => theme.footer.textColor};
+  border-bottom: 1px solid ${({ theme }) => theme.color.grey[700]};
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  line-height: 1.5;
+  padding: 20px 60px;
+`;
