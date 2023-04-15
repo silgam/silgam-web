@@ -16,6 +16,19 @@ export default class MyDocument extends Document {
             name="description"
             content="모의고사를 가장 실감나게 푸는 방법! 실감과 함께 실전감각을 키우세요."
           />
+          <meta property="og:title" content="실전 감각, 실감" />
+          <meta property="og:site_name" content="실전 감각, 실감" />
+          <meta
+            property="og:description"
+            content="모의고사를 가장 실감나게 푸는 방법! 실감과 함께 실전감각을 키우세요."
+          />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://silgam.app" />
+          <meta
+            property="og:image"
+            content="https://silgam.app/static/images/og-image.png"
+          />
+          <meta property="og:locale" content="ko_KR" />
 
           {/* Favicon */}
           <link
