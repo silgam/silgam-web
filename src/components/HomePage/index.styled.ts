@@ -18,16 +18,18 @@ export const FullHeightSection = styled.section`
     rgba(40, 53, 147, 0.2) 100%
   );
   padding-top: ${({ theme }) => theme.header.height};
+  overflow: hidden;
+  padding-bottom: 10%;
 `;
 
 export const HomePageSubtitle = styled.h2`
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 400;
   color: black;
 `;
 
 export const HomePageTitle = styled.h1`
-  font-size: 48px;
+  font-size: 60px;
   font-weight: 900;
   color: black;
   margin-top: 20px;
