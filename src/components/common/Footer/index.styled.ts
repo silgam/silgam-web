@@ -9,9 +9,24 @@ export const FooterContainer = styled.footer`
   color: ${({ theme }) => theme.footer.textColor};
   background-color: ${({ theme }) => theme.footer.backgroundColor};
   text-align: center;
-  gap: 10px;
-  padding: 40px 80px;
+  gap: 30px;
+  padding: 48px 80px;
   font-size: 12px;
+`;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  gap: 24px;
+`;
+
+export const IconButton = styled(Link)`
+  padding: 4px;
+`;
+
+export const DescriptionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 `;
 
 export const LogoContainer = styled.div`
@@ -19,21 +34,10 @@ export const LogoContainer = styled.div`
   align-items: center;
   padding: 4px;
   gap: 8px;
-  margin-top: 20px;
 
   span {
     font-weight: 700;
     font-size: 18px;
     color: ${({ theme }) => theme.color.grey[200]};
   }
-`;
-
-export const ButtonsContainer = styled.div`
-  display: flex;
-  gap: 24px;
-  margin-bottom: 20px;
-`;
-
-export const IconButton = styled(Link)`
-  padding: 4px;
 `;

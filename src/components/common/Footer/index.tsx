@@ -24,12 +24,14 @@ export default function Footer() {
           <BsFacebook size={24} />
         </Styled.IconButton>
       </Styled.ButtonsContainer>
-      <div>
-        <Link href="">서비스 이용약관</Link> |{" "}
-        <Link href="">개인정보 처리방침</Link>
-      </div>
-      <div>실감 | 대표: 민승현 | 이메일: contact@silgam.app</div>
-      <div>사업자등록번호: 101-79-00366</div>
+      <Styled.DescriptionContainer>
+        <div>
+          <Link href="">서비스 이용약관</Link> |{" "}
+          <Link href="">개인정보 처리방침</Link>
+        </div>
+        <div>실감 | 대표: 민승현 | 이메일: contact@silgam.app</div>
+        <div>사업자등록번호: 101-79-00366</div>
+      </Styled.DescriptionContainer>
       <Link href="">
         <Styled.LogoContainer>
           <Image src={appIconGrey} alt="app_icon" height={28} />
