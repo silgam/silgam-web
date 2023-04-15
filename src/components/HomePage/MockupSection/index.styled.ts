@@ -27,6 +27,8 @@ export const ContentWrapper = styled.div<{
       rightImage
         ? "drop-shadow(20px 8px 20px rgba(0, 0, 0, 0.3))"
         : "drop-shadow(-20px 8px 20px rgba(0, 0, 0, 0.3))"};
+    // https://github.com/mdn/browser-compat-data/issues/17726
+    transform: translateZ(0);
   }
 `;
 
