@@ -39,9 +39,14 @@ export default class MyDocument extends Document {
           <link
             rel="mask-icon"
             href="/static/favicon/safari-pinned-tab.svg"
-            color="#5bbad5"
+            color="#283593"
           />
-          <meta name="msapplication-TileColor" content="#da532c" />
+          <link rel="shortcut icon" href="/static/favicon/favicon.ico" />
+          <meta name="msapplication-TileColor" content="#283593" />
+          <meta
+            name="msapplication-config"
+            content="/static/favicon/browserconfig.xml"
+          />
           <meta name="theme-color" content="#ffffff" />
 
           {/* Font */}
