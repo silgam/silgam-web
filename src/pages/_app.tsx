@@ -1,9 +1,8 @@
-import "@/styles/globals.css";
-
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 
+import GlobalStyles from "@/styles/GlobalStyles";
 import { defaultTheme } from "@/styles/theme";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -13,6 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <ThemeProvider theme={defaultTheme}>
+        <GlobalStyles />
         <Component {...pageProps} />
       </ThemeProvider>
     </>
