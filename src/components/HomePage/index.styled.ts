@@ -68,16 +68,17 @@ export const CommentsSection = styled.div`
   background-color: ${({ theme }) => theme.footer.backgroundColor};
   display: flex;
   justify-content: center;
+  padding: 0 20px;
 `;
 
 export const CommentsContentWrapper = styled.div`
   width: 100%;
-  max-width: ${({ theme }) => theme.contentMaxWidth};
+  max-width: ${({ theme }) => `calc(${theme.contentMaxWidth} - 120px)`};
   color: ${({ theme }) => theme.footer.textColor};
   border-bottom: 1px solid ${({ theme }) => theme.color.grey[700]};
   display: flex;
   flex-direction: column;
   font-size: 10px;
   line-height: 1.5;
-  padding: 20px 60px;
+  padding: 20px 8px;
 `;
