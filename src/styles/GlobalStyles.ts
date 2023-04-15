@@ -14,10 +14,10 @@ const GlobalStyles = styled.createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: ${({ theme }) => theme.color.primary};
+    color: inherit;
 
     &:visited {
-      color: ${({ theme }) => theme.color.primary};
+      color: inherit;
     }
     &:hover {
       text-decoration: none;
