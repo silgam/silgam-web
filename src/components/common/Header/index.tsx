@@ -1,12 +1,22 @@
+import { useMotionValueEvent, useScroll } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 import appIcon from "../../../../public/static/images/logo/app_icon.svg";
 import * as Styled from "./index.styled";
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setIsScrolled(latest > 0);
+  });
+
   return (
-    <Styled.HeaderContainer>
+    <Styled.HeaderContainer showBorder={isScrolled}>
       <Styled.HeaderContent>
         <Link href="" style={{ textDecoration: "none" }}>
           <Styled.LogoContainer>

@@ -1,0 +1,61 @@
+import styled from "styled-components";
+
+export const HomePageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const FullHeightSection = styled.section`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    rgba(40, 53, 147, 0) 0%,
+    rgba(40, 53, 147, 0) 10%,
+    rgba(40, 53, 147, 0.2) 80%,
+    rgba(40, 53, 147, 0.2) 100%
+  );
+  padding-top: ${({ theme }) => theme.header.height};
+`;
+
+export const HomePageSubtitle = styled.h2`
+  font-size: 24px;
+  font-weight: 400;
+  color: black;
+`;
+
+export const HomePageTitle = styled.h1`
+  font-size: 48px;
+  font-weight: 900;
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 60px;
+`;
+
+export const DownloadButtonsContainer = styled.div`
+  display: flex;
+  gap: 12px;
+`;
+
+export const DownloadButton = styled.div`
+  display: flex;
+  padding: 12px 24px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+  gap: 8px;
+`;
+
+export const ChevronDown = styled.div`
+  position: absolute;
+  bottom: 40px;
+
+  svg {
+    color: rgba(0, 0, 0, 0.3);
+  }
+`;

@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
-export const HeaderContainer = styled.header`
+export const HeaderContainer = styled.header<{ showBorder: boolean }>`
+  width: 100%;
+  position: fixed;
   display: flex;
   height: ${({ theme }) => theme.header.height};
-  background-color: #fff;
-  border-bottom: 1px solid #e5e5e5;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: ${({ showBorder }) =>
+    showBorder ? "1px solid #e5e5e5;" : "1px solid transparent;"};
   align-items: center;
   justify-content: center;
+  backdrop-filter: saturate(180%) blur(20px);
+  transition: border-bottom 0.2s ease-in-out;
 `;
 
 export const HeaderContent = styled.div`
@@ -43,9 +48,6 @@ export const NavContainer = styled.nav`
 
     &:visited {
       color: ${({ theme }) => theme.color.grey[700]};
-    }
-    &:hover {
-      text-decoration: none;
     }
   }
 `;
