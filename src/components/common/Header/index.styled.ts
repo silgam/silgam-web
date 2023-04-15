@@ -12,6 +12,7 @@ export const HeaderContainer = styled.header<{ showBorder: boolean }>`
   justify-content: center;
   backdrop-filter: saturate(180%) blur(20px);
   transition: border-bottom 0.2s ease-in-out;
+  z-index: 2;
 `;
 
 export const HeaderContent = styled.div`
