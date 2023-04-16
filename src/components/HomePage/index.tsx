@@ -5,6 +5,8 @@ import { createRef, useEffect, useState } from "react";
 import { BsChevronCompactDown } from "react-icons/bs";
 import TextTransition from "react-text-transition";
 
+import { ROUTES } from "@/consts/routes";
+
 import appleIcon from "../../../public/static/images/icons/apple_icon.png";
 import googlePlayIcon from "../../../public/static/images/icons/google_play_icon.png";
 import clockMockup from "../../../public/static/images/mockups/clock.png";
@@ -63,13 +65,13 @@ export default function HomePage() {
         </Styled.HomePageSubtitle>
         <Styled.HomePageTitle>실전 감각, 실감</Styled.HomePageTitle>
         <Styled.DownloadButtonsContainer>
-          <Link href="/appstore" target="_blank">
+          <Link href={ROUTES.APP_STORE} target="_blank">
             <Styled.DownloadButton>
               <Image src={appleIcon} alt="appleIcon" />
               App Store
             </Styled.DownloadButton>
           </Link>
-          <Link href="/googleplay" target="_blank">
+          <Link href={ROUTES.GOOGLE_PLAY} target="_blank">
             <Styled.DownloadButton>
               <Image src={googlePlayIcon} alt="googlePlayIcon" />
               Google Play

@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
+import { ROUTES } from "@/consts/routes";
+
 import appIcon from "../../../../public/static/images/logo/app_icon.svg";
 import * as Styled from "./index.styled";
 
@@ -18,16 +20,19 @@ export default function Header() {
   return (
     <Styled.HeaderContainer showBorder={isScrolled}>
       <Styled.HeaderContent>
-        <Link href="" style={{ textDecoration: "none" }}>
+        <Link href={ROUTES.HOME} style={{ textDecoration: "none" }}>
           <Styled.LogoContainer>
             <Image src={appIcon} alt="app_icon" />
             <span>실감</span>
           </Styled.LogoContainer>
         </Link>
         <Styled.NavContainer>
-          <Link href="">소개</Link>
-          <Link href="">문의</Link>
-          <Link href="">다운로드</Link>
+          <Link href={ROUTES.SUPPORT} target="_blank">
+            문의
+          </Link>
+          <Link href={ROUTES.DOWNLOAD} target="_blank">
+            다운로드
+          </Link>
         </Styled.NavContainer>
       </Styled.HeaderContent>
     </Styled.HeaderContainer>
