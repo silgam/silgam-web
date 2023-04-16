@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #283593;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      img {
+        width: 100%;
+        max-width: 800px;
+        pointer-events: none;
+      }
+      .section {
+        display: flex;
+        justify-content: center;
+        position: relative;
+      }
+      .button {
+        cursor: pointer;
+        pointer-events: all;
+        transition: all 0.2s ease-in-out;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .button:active {
+        transform: scale(0.95);
+      }
+      #button_purchase {
+        position: absolute;
+        width: calc(592 / 700 * 100%);
+        max-width: calc(592 / 700 * 800px);
+        top: calc((608.5 - 30) / 984 * 100%);
+      }
+      #button_trial {
+        position: absolute;
+        width: calc(592 / 700 * 100%);
+        max-width: calc(592 / 700 * 800px);
+        top: calc((572.5 - 30) / 848 * 100%);
+      }
+    </style>
+    <script type="text/javascript">
+      document.addEventListener("contextmenu", (event) =>
+        event.preventDefault(),
+      );
+      window.addEventListener("scroll", () => {
+        const purchaseSection = document.getElementById("section6");
+        if (window.scrollY >= purchaseSection.offsetTop) {
+          window.FlutterWebView.postMessage("purchaseSectionShown");
+        } else {
+          window.FlutterWebView.postMessage("purchaseSectionHidden");
+        }
+      });
+      function purchase() {
+        window.FlutterWebView.postMessage("purchase");
+      }
+      function trial() {
+        window.FlutterWebView.postMessage("trial");
+      }
+      function scrollToPurchaseSection() {
+        const purchaseSection = document.getElementById("section6");
+        window.scrollTo({
+          top: purchaseSection.offsetTop,
+          behavior: "smooth",
+        });
+      }
+    </script>
+    <title>2024학년도 실감패스</title>
+  </head>
+  <body ontouchstart="">
+    <div class="section" id="section1">
+      <img
+        src="/static/images/pass_page/pass2024/section1.png"
+        alt="section1"
+      />
+    </div>
+    <div class="section" id="section2">
+      <img
+        src="/static/images/pass_page/pass2024/section2.png"
+        alt="section2"
+      />
+    </div>
+    <div class="section" id="section3">
+      <img
+        src="/static/images/pass_page/pass2024/section3.png"
+        alt="section3"
+      />
+    </div>
+    <div class="section" id="section4">
+      <img
+        src="/static/images/pass_page/pass2024/section4.png"
+        alt="section4"
+      />
+    </div>
+    <div class="section" id="section5">
+      <img
+        src="/static/images/pass_page/pass2024/section5.png"
+        alt="section5"
+      />
+    </div>
+    <div class="section" id="section6">
+      <img
+        src="/static/images/pass_page/pass2024/section6.png"
+        alt="section6"
+      />
+    </div>
+    <div class="section" id="section7">
+      <img
+        src="/static/images/pass_page/pass2024/section7.png"
+        alt="section7"
+      />
+      <img
+        class="button"
+        id="button_purchase"
+        onclick="purchase()"
+        draggable="false"
+        src="/static/images/pass_page/button_purchase.png"
+        alt="purchase button"
+      />
+    </div>
+    <div class="section" id="section8">
+      <img
+        src="/static/images/pass_page/pass2024/section8.png"
+        alt="section8"
+      />
+      <img
+        class="button"
+        id="button_trial"
+        onclick="trial()"
+        draggable="false"
+        src="/static/images/pass_page/button_trial.png"
+        alt="trial button"
+      />
+    </div>
+  </body>
+</html>

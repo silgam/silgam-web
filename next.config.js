@@ -5,6 +5,16 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+
+  async rewrites() {
+    return [
+      {
+        source: "/products/pass2024",
+        destination: "/static/html/pass2024.html",
+      },
+    ];
+  },
+
   async redirects() {
     return [
       {
