@@ -26,6 +26,8 @@ declare module "styled-components" {
       backgroundColor: string;
       textColor: string;
     };
-    contentMaxWidth: string;
+    width: {
+      contentMax: string;
+    };
   }
 }

@@ -16,11 +16,16 @@ export const HeaderContainer = styled.header<{ showBorder: boolean }>`
 `;
 
 export const HeaderContent = styled.div`
-  max-width: ${({ theme }) => theme.contentMaxWidth};
+  max-width: ${({ theme }) => theme.width.contentMax};
   display: flex;
   flex: 1;
   padding: 0 20px;
   justify-content: space-between;
+  font-size: 15px;
+
+  @media (max-width: 480px) {
+    font-size: 12px;
+  }
 `;
 
 export const LogoContainer = styled.div`
@@ -29,10 +34,19 @@ export const LogoContainer = styled.div`
   padding: 4px;
   gap: 8px;
 
-  span {
+  & > span {
     color: black;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 1.2em;
+  }
+
+  & > img {
+    height: 28px;
+    width: unset;
+
+    @media (max-width: 480px) {
+      height: 24px;
+    }
   }
 `;
 
@@ -40,12 +54,16 @@ export const NavContainer = styled.nav`
   display: flex;
   gap: 16px;
 
+  @media (max-width: 480px) {
+    gap: 8px;
+  }
+
   a {
     display: flex;
     align-items: center;
     padding: 4px 8px;
     color: ${({ theme }) => theme.color.grey[700]};
-    font-size: 15px;
+    font-size: 1em;
 
     &:visited {
       color: ${({ theme }) => theme.color.grey[700]};

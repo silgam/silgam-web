@@ -10,7 +10,7 @@ export const FooterContainer = styled.footer`
   background-color: ${({ theme }) => theme.footer.backgroundColor};
   text-align: center;
   gap: 30px;
-  padding: 48px 80px;
+  padding: 48px 20px;
   font-size: 12px;
 `;
 

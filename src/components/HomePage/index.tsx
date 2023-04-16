@@ -65,13 +65,13 @@ export default function HomePage() {
         <Styled.DownloadButtonsContainer>
           <Link href="/appstore" target="_blank">
             <Styled.DownloadButton>
-              <Image src={appleIcon} alt="appleIcon" width={24} />
+              <Image src={appleIcon} alt="appleIcon" />
               App Store
             </Styled.DownloadButton>
           </Link>
           <Link href="/googleplay" target="_blank">
             <Styled.DownloadButton>
-              <Image src={googlePlayIcon} alt="googlePlayIcon" width={24} />
+              <Image src={googlePlayIcon} alt="googlePlayIcon" />
               Google Play
             </Styled.DownloadButton>
           </Link>
@@ -87,7 +87,7 @@ export default function HomePage() {
               repeatType: "mirror",
             }}
           >
-            <BsChevronCompactDown size={48} />
+            <BsChevronCompactDown />
           </motion.div>
         </Styled.ChevronDown>
       </Styled.FullHeightSection>

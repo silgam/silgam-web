@@ -20,7 +20,7 @@ export default function Header() {
       <Styled.HeaderContent>
         <Link href="" style={{ textDecoration: "none" }}>
           <Styled.LogoContainer>
-            <Image src={appIcon} alt="app_icon" height={28} />
+            <Image src={appIcon} alt="app_icon" />
             <span>실감</span>
           </Styled.LogoContainer>
         </Link>

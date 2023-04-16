@@ -17,23 +17,39 @@ export const FullHeightSection = styled.section`
     rgba(40, 53, 147, 0.2) 80%,
     rgba(40, 53, 147, 0.2) 100%
   );
-  padding-top: ${({ theme }) => theme.header.height};
+  padding: ${({ theme }) => theme.header.height} 8px 20vh 8px;
   overflow: hidden;
-  padding-bottom: 10%;
+  font-size: 1em;
+  font-size: 28px;
+
+  @media (max-width: 640px) {
+    font-size: 20px;
+  }
 `;
 
 export const HomePageSubtitle = styled.h2`
-  font-size: 28px;
+  font-size: 1em;
   font-weight: 400;
   color: black;
+  text-align: center;
+
+  @media (max-width: 480px) {
+    font-size: 0.7em;
+  }
 `;
 
 export const HomePageTitle = styled.h1`
-  font-size: 60px;
+  font-size: 2.14em;
   font-weight: 900;
   color: black;
   margin-top: 20px;
   margin-bottom: 60px;
+  text-align: center;
+
+  @media (max-width: 480px) {
+    margin-top: 8px;
+    font-size: 2em;
+  }
 `;
 
 export const DownloadButtonsContainer = styled.div`
@@ -51,16 +67,38 @@ export const DownloadButton = styled.div`
   justify-content: center;
   line-height: 1.2;
   gap: 8px;
+  font-size: 0.58em;
+
+  @media (max-width: 640px) {
+    padding: 10px 20px;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+
+    @media (max-width: 640px) {
+      width: 20px;
+      height: 20px;
+    }
+  }
 `;
 
 export const ChevronDown = styled.div`
   position: absolute;
-  bottom: 40px;
+  bottom: 3vh;
   padding: 20px;
   cursor: pointer;
 
   svg {
+    width: 48px;
+    height: 48px;
     color: rgba(0, 0, 0, 0.3);
+
+    @media (max-width: 640px) {
+      width: 32px;
+      height: 32px;
+    }
   }
 `;
 
@@ -73,7 +111,7 @@ export const CommentsSection = styled.div`
 
 export const CommentsContentWrapper = styled.div`
   width: 100%;
-  max-width: ${({ theme }) => `calc(${theme.contentMaxWidth} - 120px)`};
+  max-width: ${({ theme }) => `calc(${theme.width.contentMax} - 120px)`};
   color: ${({ theme }) => theme.footer.textColor};
   border-bottom: 1px solid ${({ theme }) => theme.color.grey[700]};
   display: flex;

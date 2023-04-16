@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from "next/image";
+import { StaticImageData } from "next/image";
 
 import * as Styled from "./index.styled";
 
@@ -20,7 +20,11 @@ export default function MockupSection({
   return (
     <Styled.MockupSection grayBackground={grayBackground}>
       <Styled.ContentWrapper rightImage={rightImage}>
-        <Image src={mockupSrc} alt="mockupImage" width={340} />
+        <Styled.MockupImage
+          src={mockupSrc}
+          alt="mockupImage"
+          rightImage={rightImage}
+        />
         <Styled.SectionTitleContainer>
           <Styled.SectionTitle>{title}</Styled.SectionTitle>
           <Styled.SectionDescription>{description}</Styled.SectionDescription>

@@ -10,6 +10,7 @@ const GlobalStyles = styled.createGlobalStyle`
     border: 0;
     outline: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
   }
 
   a {

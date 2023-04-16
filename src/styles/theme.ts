@@ -25,5 +25,7 @@ export const defaultTheme: DefaultTheme = {
     backgroundColor: "#191b28",
     textColor: color.grey[400],
   },
-  contentMaxWidth: "1050px",
+  width: {
+    contentMax: "1024px",
+  },
 };
