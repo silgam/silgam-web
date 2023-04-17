@@ -45,6 +45,10 @@ export const MockupImage = styled(Image)<{
     width: 280px;
   }
 
+  @media (max-width: 830px) {
+    filter: ${leftShadow};
+  }
+
   @media (max-width: 480px) {
     width: 240px;
   }
