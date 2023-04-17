@@ -20,6 +20,7 @@ export const defaultTheme: DefaultTheme = {
   color: color,
   header: {
     height: "60px",
+    heightMobile: "54px",
   },
   footer: {
     backgroundColor: "#191b28",

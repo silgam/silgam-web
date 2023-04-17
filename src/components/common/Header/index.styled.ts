@@ -13,6 +13,10 @@ export const HeaderContainer = styled.header<{ showBorder: boolean }>`
   backdrop-filter: saturate(180%) blur(20px);
   transition: border-bottom 0.2s ease-in-out;
   z-index: 2;
+
+  @media (max-width: 480px) {
+    height: ${({ theme }) => theme.header.heightMobile};
+  }
 `;
 
 export const HeaderContent = styled.div`
@@ -24,7 +28,7 @@ export const HeaderContent = styled.div`
   font-size: 15px;
 
   @media (max-width: 480px) {
-    font-size: 12px;
+    font-size: 13px;
   }
 `;
 
@@ -42,10 +46,11 @@ export const LogoContainer = styled.div`
 
   & > img {
     height: 28px;
-    width: unset;
+    width: 25.42199488px;
 
     @media (max-width: 480px) {
-      height: 24px;
+      height: 25px;
+      width: 22.69820972px;
     }
   }
 `;
