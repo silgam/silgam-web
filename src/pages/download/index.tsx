@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 
+import Layout from "@/components/common/Layout";
 import { URLS } from "@/consts/routes";
 
 export default function Page() {
@@ -38,5 +39,5 @@ export default function Page() {
     }
   }, [router]);
 
-  return <></>;
+  return <Layout hideHeader hideFooter />;
 }

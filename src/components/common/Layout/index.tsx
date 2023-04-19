@@ -4,18 +4,24 @@ import Footer from "../Footer";
 import Header from "../Header";
 
 interface LayoutProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  hideHeader?: boolean;
+  hideFooter?: boolean;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({
+  children,
+  hideHeader,
+  hideFooter,
+}: LayoutProps) {
   return (
     <>
       <Head>
         <title>실전 감각, 실감</title>
       </Head>
-      <Header />
+      {!hideHeader && <Header />}
       {children}
-      <Footer />
+      {!hideFooter && <Footer />}
     </>
   );
 }
