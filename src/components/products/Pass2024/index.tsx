@@ -15,7 +15,7 @@ import * as Styled from "./index.styled";
 
 declare global {
   interface Window {
-    FlutterWebView: Window;
+    FlutterWebView?: Window;
   }
 }
 
@@ -28,9 +28,9 @@ export default function Pass2024Page() {
     };
     const onScroll = () => {
       if (window.scrollY >= (section6Ref.current?.offsetTop || 0)) {
-        window.FlutterWebView.postMessage("purchaseSectionShown");
+        window.FlutterWebView?.postMessage("purchaseSectionShown");
       } else {
-        window.FlutterWebView.postMessage("purchaseSectionHidden");
+        window.FlutterWebView?.postMessage("purchaseSectionHidden");
       }
     };
 
