@@ -69,7 +69,7 @@ export default function Pass2024Page() {
         <Styled.Section>
           <Styled.SectionImage src={section5Image} alt="section" />
         </Styled.Section>
-        <Styled.Section ref={section6Ref}>
+        <Styled.Section ref={section6Ref} id="section6">
           <Styled.SectionImage src={section6Image} alt="section" />
         </Styled.Section>
         <Styled.Section>
