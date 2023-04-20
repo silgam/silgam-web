@@ -11,7 +11,7 @@ import section5Image from "../../../../public/static/images/pass_page/pass2024/s
 import section6Image from "../../../../public/static/images/pass_page/pass2024/section6.png";
 import section7Image from "../../../../public/static/images/pass_page/pass2024/section7.png";
 import section8Image from "../../../../public/static/images/pass_page/pass2024/section8.png";
-import * as Styled from ".p/index.styled";
+import * as Styled from "./index.styled";
 
 declare global {
   interface Window {
