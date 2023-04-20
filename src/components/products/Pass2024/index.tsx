@@ -43,11 +43,11 @@ export default function Pass2024Page() {
   });
 
   const purchase = () => {
-    window.FlutterWebView.postMessage("purchase");
+    window.FlutterWebView?.postMessage("purchase");
   };
 
   const trial = () => {
-    window.FlutterWebView.postMessage("trial");
+    window.FlutterWebView?.postMessage("trial");
   };
 
   return (
