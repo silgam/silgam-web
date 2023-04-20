@@ -21,5 +21,6 @@
     "simple-import-sort/exports": "error",
     "unused-imports/no-unused-imports": "error",
     "react/self-closing-comp": "warn"
-  }
+  },
+  "ignorePatterns": "public/**"
 }
