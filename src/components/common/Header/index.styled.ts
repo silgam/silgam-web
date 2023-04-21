@@ -1,35 +1,45 @@
 import Link from "next/link";
+import { HamburgerSliderReverse } from "react-animated-burgers";
 import styled from "styled-components";
 
-export const HeaderContainer = styled.header<{ showBorder: boolean }>`
+export const HeaderContainer = styled.header<{
+  showBorder: boolean;
+  isUsingHambuger: boolean;
+}>`
   width: 100%;
   position: fixed;
   display: flex;
-  height: ${({ theme }) => theme.header.height};
+  height: ${({ theme, isUsingHambuger }) =>
+    theme.header.height + (isUsingHambuger ? "" : " !important")};
   background-color: rgba(255, 255, 255, 0.8);
   border-bottom: ${({ showBorder }) =>
     showBorder ? "1px solid #e5e5e5;" : "1px solid transparent;"};
-  align-items: center;
-  justify-content: center;
+  align-items: ${({ isUsingHambuger }) =>
+    isUsingHambuger ? "stretch" : "center"};
   backdrop-filter: saturate(180%) blur(20px);
-  transition: border-bottom 0.2s ease-in-out;
   z-index: 2;
+  flex-direction: ${({ isUsingHambuger }) =>
+    isUsingHambuger ? "column" : "row"};
+  padding: 0 20px;
+  overflow-y: hidden;
 
   @media (max-width: 480px) {
     height: ${({ theme }) => theme.header.heightMobile};
   }
 `;
 
-export const HeaderContent = styled.div`
+export const HeaderContent = styled.div<{ isUsingHambuger: boolean }>`
   max-width: ${({ theme }) => theme.width.contentMax};
   display: flex;
-  flex: 1;
-  padding: 0 20px;
+  flex: ${({ isUsingHambuger }) => (isUsingHambuger ? "unset" : "1")};
   justify-content: space-between;
+  align-items: center;
   font-size: 15px;
+  flex-shrink: 0;
 
   @media (max-width: 480px) {
     font-size: 13px;
+    height: ${({ theme }) => theme.header.heightMobile};
   }
 `;
 
@@ -56,20 +66,30 @@ export const LogoContainer = styled.div`
   }
 `;
 
-export const NavContainer = styled.nav`
+export const NavContainer = styled.nav<{
+  isUsingHambuger: boolean;
+  isMenuOpened: boolean;
+}>`
   display: flex;
   gap: 16px;
+  flex-direction: ${({ isUsingHambuger }) =>
+    isUsingHambuger ? "column" : "row"};
+  padding: ${({ isUsingHambuger }) => (isUsingHambuger ? "8px 0 12px 0" : "0")};
 
   @media (max-width: 480px) {
-    gap: 8px;
+    gap: ${({ isUsingHambuger }) => (isUsingHambuger ? "16px" : "8px")};
   }
 
   & > a {
     display: flex;
     align-items: center;
-    padding: 4px 8px;
+    padding: ${({ isUsingHambuger }) => (isUsingHambuger ? "4px" : "4px 8px")};
     color: ${({ theme }) => theme.color.grey[700]};
     font-size: 1em;
+
+    @media (max-width: 480px) {
+      font-size: 0.85em;
+    }
 
     &:visited {
       color: ${({ theme }) => theme.color.grey[700]};
@@ -89,7 +109,7 @@ export const SnsButtonsContainer = styled.div`
 export const IconButton = styled(Link)`
   display: flex;
   align-items: center;
-  padding: 4px;
+  padding: 6px;
 
   &:hover {
     & > svg {
@@ -105,6 +125,31 @@ export const IconButton = styled(Link)`
     @media (max-width: 480px) {
       width: 18px;
       height: 18px;
+    }
+  }
+`;
+
+export const HambugerButton = styled(HamburgerSliderReverse)`
+  display: flex;
+  align-items: center;
+  padding: 4px;
+
+  & > div {
+    width: 22px;
+
+    span {
+      width: 22px;
+      height: 1.7px;
+
+      &:before {
+        width: 22px;
+        height: 1.7px;
+      }
+
+      &::after {
+        width: 22px;
+        height: 1.7px;
+      }
     }
   }
 `;
