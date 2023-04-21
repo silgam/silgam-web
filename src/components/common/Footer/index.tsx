@@ -31,13 +31,13 @@ export default function Footer() {
       </Styled.ButtonsContainer>
       <Styled.DescriptionContainer>
         <div>
-          <Link href={ROUTES.TERMS} target="_blank">
+          <Styled.DescriptionLink href={ROUTES.TERMS} target="_blank">
             서비스 이용약관
-          </Link>{" "}
+          </Styled.DescriptionLink>{" "}
           |{" "}
-          <Link href={ROUTES.PRIVACY} target="_blank">
+          <Styled.DescriptionLink href={ROUTES.PRIVACY} target="_blank">
             개인정보 처리방침
-          </Link>
+          </Styled.DescriptionLink>
         </div>
       </Styled.DescriptionContainer>
       <Link href={ROUTES.HOME}>

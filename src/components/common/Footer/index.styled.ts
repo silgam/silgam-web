@@ -21,6 +21,12 @@ export const ButtonsContainer = styled.div`
 
 export const IconButton = styled(Link)`
   padding: 4px;
+
+  &:hover {
+    & > svg {
+      color: ${({ theme }) => theme.color.grey[300]};
+    }
+  }
 `;
 
 export const DescriptionContainer = styled.div`
@@ -29,13 +35,19 @@ export const DescriptionContainer = styled.div`
   gap: 10px;
 `;
 
+export const DescriptionLink = styled(Link)`
+  &:hover {
+    color: ${({ theme }) => theme.color.grey[300]};
+  }
+`;
+
 export const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   padding: 4px;
   gap: 8px;
 
-  span {
+  & > span {
     font-weight: 700;
     font-size: 18px;
     color: ${({ theme }) => theme.color.grey[200]};

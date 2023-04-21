@@ -68,12 +68,17 @@ export const DownloadButton = styled.div`
   line-height: 1.2;
   gap: 8px;
   font-size: 0.58em;
+  transition: background-color 0.1s ease-in-out;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
 
   @media (max-width: 640px) {
     padding: 10px 20px;
   }
 
-  img {
+  & > img {
     width: 24px;
     height: 24px;
 
