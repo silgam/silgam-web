@@ -2249,10 +2249,15 @@ react-dom@18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-icons@*, react-icons@^4.8.0:
+react-icons@*:
   version "4.8.0"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.8.0.tgz#621e900caa23b912f737e41be57f27f6b2bff445"
   integrity sha512-N6+kOLcihDiAnj5Czu637waJqSnwlMNROzVZMhfX68V/9bu9qHaMIJC4UdozWoOk57gahFCNHwVvWzm0MTzRjg==
+
+react-icons@^4.8.1-snapshot.2:
+  version "4.8.1-snapshot.2"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.8.1-snapshot.2.tgz#336ecd15cacd99c799df4e7a244e2f99c5703432"
+  integrity sha512-EC41ETSFRtpAuwstiDw/8rkjWbw13TQAQDIQDckCOnAgf1bPcXOx+OLUzCNpNd4sPwl/P8dSFqTwSUYybYWmJQ==
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
