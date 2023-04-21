@@ -2,4 +2,4 @@
 
 [silgam.app](https://silgam.app)
 
-![landing screenshot](/docs/images/landing_screenshot.png)
+[![landing screenshot](/docs/images/landing_screenshot.png)](https://silgam.app)
