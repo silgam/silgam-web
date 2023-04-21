@@ -33,11 +33,11 @@ const rightShadow = "drop-shadow(20px 8px 20px rgba(0, 0, 0, 0.3))";
 const leftShadow = "drop-shadow(-20px 8px 20px rgba(0, 0, 0, 0.3))";
 
 export const MockupImage = styled(Image)<{
-  rightImage?: boolean;
+  $rightImage?: boolean;
 }>`
   width: 340px;
   height: unset;
-  filter: ${({ rightImage }) => (rightImage ? rightShadow : leftShadow)};
+  filter: ${({ $rightImage }) => ($rightImage ? rightShadow : leftShadow)};
   // https://github.com/mdn/browser-compat-data/issues/17726
   transform: translateZ(0);
 

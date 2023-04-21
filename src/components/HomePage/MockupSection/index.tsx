@@ -23,7 +23,7 @@ export default function MockupSection({
         <Styled.MockupImage
           src={mockupSrc}
           alt="mockupImage"
-          rightImage={rightImage}
+          $rightImage={rightImage}
         />
         <Styled.SectionTitleContainer>
           <Styled.SectionTitle>{title}</Styled.SectionTitle>
