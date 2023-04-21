@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header<{ showBorder: boolean }>`
@@ -63,7 +64,7 @@ export const NavContainer = styled.nav`
     gap: 8px;
   }
 
-  a {
+  & > a {
     display: flex;
     align-items: center;
     padding: 4px 8px;
@@ -72,6 +73,38 @@ export const NavContainer = styled.nav`
 
     &:visited {
       color: ${({ theme }) => theme.color.grey[700]};
+    }
+
+    &:hover {
+      color: ${({ theme }) => theme.color.primary};
+    }
+  }
+`;
+
+export const SnsButtonsContainer = styled.div`
+  display: flex;
+  gap: 8px;
+`;
+
+export const IconButton = styled(Link)`
+  display: flex;
+  align-items: center;
+  padding: 4px;
+
+  &:hover {
+    & > svg {
+      color: ${({ theme }) => theme.color.grey[700]};
+    }
+  }
+
+  & > svg {
+    width: 20px;
+    height: 20px;
+    color: ${({ theme }) => theme.color.grey[500]};
+
+    @media (max-width: 480px) {
+      width: 18px;
+      height: 18px;
     }
   }
 `;
