@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 
 import { ROUTES } from "@/consts/routes";
+import appIcon from "@/static/images/logo/app_icon.svg";
 
-import appIcon from "../../../../public/static/images/logo/app_icon.svg";
 import * as Styled from "./index.styled";
 
 export default function Header() {

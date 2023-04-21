@@ -1,16 +1,17 @@
 import Script from "next/script";
 import { createRef, useEffect } from "react";
 
-import purchaseButtonImage from "../../../../public/static/images/pass_page/button_purchase.png";
-import trialButtonImage from "../../../../public/static/images/pass_page/button_trial.png";
-import section1Image from "../../../../public/static/images/pass_page/pass2024/section1.png";
-import section2Image from "../../../../public/static/images/pass_page/pass2024/section2.png";
-import section3Image from "../../../../public/static/images/pass_page/pass2024/section3.png";
-import section4Image from "../../../../public/static/images/pass_page/pass2024/section4.png";
-import section5Image from "../../../../public/static/images/pass_page/pass2024/section5.png";
-import section6Image from "../../../../public/static/images/pass_page/pass2024/section6.png";
-import section7Image from "../../../../public/static/images/pass_page/pass2024/section7.png";
-import section8Image from "../../../../public/static/images/pass_page/pass2024/section8.png";
+import purchaseButtonImage from "@/static/images/pass_page/button_purchase.png";
+import trialButtonImage from "@/static/images/pass_page/button_trial.png";
+import section1Image from "@/static/images/pass_page/pass2024/section1.png";
+import section2Image from "@/static/images/pass_page/pass2024/section2.png";
+import section3Image from "@/static/images/pass_page/pass2024/section3.png";
+import section4Image from "@/static/images/pass_page/pass2024/section4.png";
+import section5Image from "@/static/images/pass_page/pass2024/section5.png";
+import section6Image from "@/static/images/pass_page/pass2024/section6.png";
+import section7Image from "@/static/images/pass_page/pass2024/section7.png";
+import section8Image from "@/static/images/pass_page/pass2024/section8.png";
+
 import * as Styled from "./index.styled";
 
 declare global {

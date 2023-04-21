@@ -5,8 +5,8 @@ import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
 import { RiKakaoTalkFill } from "react-icons/ri";
 
 import { ROUTES } from "@/consts/routes";
+import appIconGrey from "@/static/images/logo/app_icon_grey.svg";
 
-import appIconGrey from "../../../../public/static/images/logo/app_icon_grey.svg";
 import * as Styled from "./index.styled";
 
 export default function Footer() {

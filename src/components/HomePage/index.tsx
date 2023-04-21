@@ -6,13 +6,13 @@ import { BsChevronCompactDown } from "react-icons/bs";
 import TextTransition from "react-text-transition";
 
 import { ROUTES } from "@/consts/routes";
+import appleIcon from "@/static/images/icons/apple_icon.png";
+import googlePlayIcon from "@/static/images/icons/google_play_icon.png";
+import clockMockup from "@/static/images/mockups/clock.png";
+import noiseSettingsMockup from "@/static/images/mockups/noise_settings.png";
+import recordDetailMockup from "@/static/images/mockups/record_detail.png";
+import statsMockup from "@/static/images/mockups/stats.png";
 
-import appleIcon from "../../../public/static/images/icons/apple_icon.png";
-import googlePlayIcon from "../../../public/static/images/icons/google_play_icon.png";
-import clockMockup from "../../../public/static/images/mockups/clock.png";
-import noiseSettingsMockup from "../../../public/static/images/mockups/noise_settings.png";
-import recordDetailMockup from "../../../public/static/images/mockups/record_detail.png";
-import statsMockup from "../../../public/static/images/mockups/stats.png";
 import { Bold, Superscript } from "../common/Text/index.styled";
 import * as Styled from "./index.styled";
 import MockupSection from "./MockupSection";
