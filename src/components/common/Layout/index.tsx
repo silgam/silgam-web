@@ -12,14 +12,16 @@ interface LayoutProps {
 
 export default function Layout({
   children,
-  title,
+  title = "실전 감각, 실감",
   hideHeader,
   hideFooter,
 }: LayoutProps) {
   return (
     <>
       <Head>
-        <title>{title || "실전 감각, 실감"}</title>
+        <title>{title}</title>
+        <meta property="og:title" content={title} />
+        <meta property="og:site_name" content={title} />
       </Head>
       {!hideHeader && <Header />}
       {children}

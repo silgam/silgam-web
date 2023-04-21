@@ -16,8 +16,6 @@ export default class MyDocument extends Document {
             name="description"
             content="모의고사를 가장 실감나게 푸는 방법! 실감과 함께 실전감각을 키우세요."
           />
-          <meta property="og:title" content="실전 감각, 실감" />
-          <meta property="og:site_name" content="실전 감각, 실감" />
           <meta
             property="og:description"
             content="모의고사를 가장 실감나게 푸는 방법! 실감과 함께 실전감각을 키우세요."
