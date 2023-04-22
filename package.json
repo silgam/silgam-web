@@ -12,7 +12,7 @@
     "framer-motion": "^10.12.2",
     "next": "13.3.0",
     "react": "18.2.0",
-    "react-animated-burgers": "^1.2.8",
+    "react-animated-burgers": "https://github.com/silgam/react-animated-burgers",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.1-snapshot.2",
     "react-responsive": "^9.0.2",
