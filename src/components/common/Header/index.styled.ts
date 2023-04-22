@@ -14,22 +14,31 @@ export const HeaderContainer = styled.header<{
   background-color: rgba(255, 255, 255, 0.8);
   border-bottom: ${({ showBorder }) =>
     showBorder ? "1px solid #e5e5e5;" : "1px solid transparent;"};
-  align-items: ${({ isUsingHambuger }) =>
-    isUsingHambuger ? "stretch" : "center"};
   backdrop-filter: saturate(180%) blur(20px);
   z-index: 2;
-  flex-direction: ${({ isUsingHambuger }) =>
-    isUsingHambuger ? "column" : "row"};
   padding: 0 20px;
   overflow-y: hidden;
+  justify-content: center;
 
   @media (max-width: 480px) {
-    height: ${({ theme }) => theme.header.heightMobile};
+    height: ${({ theme, isUsingHambuger }) =>
+      theme.header.heightMobile + (isUsingHambuger ? "" : " !important")};
   }
 `;
 
-export const HeaderContent = styled.div<{ isUsingHambuger: boolean }>`
+export const HeaderContentWrapper = styled.div<{
+  isUsingHambuger: boolean;
+}>`
+  display: flex;
+  width: 100%;
   max-width: ${({ theme }) => theme.width.contentMax};
+  align-items: ${({ isUsingHambuger }) =>
+    isUsingHambuger ? "stretch" : "center"};
+  flex-direction: ${({ isUsingHambuger }) =>
+    isUsingHambuger ? "column" : "row"};
+`;
+
+export const HeaderContent = styled.div<{ isUsingHambuger: boolean }>`
   display: flex;
   flex: ${({ isUsingHambuger }) => (isUsingHambuger ? "unset" : "1")};
   justify-content: space-between;
