@@ -2,7 +2,10 @@ import Link from "next/link";
 import { HamburgerSliderReverse } from "react-animated-burgers";
 import styled from "styled-components";
 
+export const USE_HAMBURGER_MENU_WIDTH = 400;
+
 export const TouchableBackground = styled.div<{ isMenuOpened: boolean }>`
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -13,17 +16,19 @@ export const TouchableBackground = styled.div<{ isMenuOpened: boolean }>`
   opacity: ${({ isMenuOpened }) => (isMenuOpened ? "1" : "0")};
   transition: opacity 0.1s ease-in-out;
   pointer-events: ${({ isMenuOpened }) => (isMenuOpened ? "auto" : "none")};
+
+  @media (max-width: ${USE_HAMBURGER_MENU_WIDTH}px) {
+    display: block;
+  }
 `;
 
 export const HeaderContainer = styled.header<{
   showBorder: boolean;
-  isUsingHambuger: boolean;
 }>`
   width: 100%;
   position: fixed;
   display: flex;
-  height: ${({ theme, isUsingHambuger }) =>
-    theme.header.height + (isUsingHambuger ? "" : " !important")};
+  height: ${({ theme }) => theme.header.height};
   background-color: rgba(255, 255, 255, 0.8);
   border-bottom: ${({ showBorder }) =>
     showBorder ? "1px solid #e5e5e5;" : "1px solid transparent;"};
@@ -34,32 +39,32 @@ export const HeaderContainer = styled.header<{
   justify-content: center;
 
   @media (max-width: 480px) {
-    height: ${({ theme, isUsingHambuger }) =>
-      theme.header.heightMobile + (isUsingHambuger ? "" : " !important")};
+    height: ${({ theme }) => theme.header.heightMobile};
   }
 `;
 
-export const HeaderContentWrapper = styled.div<{
-  isUsingHambuger: boolean;
-}>`
+export const HeaderContentWrapper = styled.div`
   display: flex;
   width: 100%;
   max-width: ${({ theme }) => theme.width.contentMax};
-  align-items: ${({ isUsingHambuger }) =>
-    isUsingHambuger ? "stretch" : "center"};
-  flex-direction: ${({ isUsingHambuger }) =>
-    isUsingHambuger ? "column" : "row"};
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+
+  @media (max-width: ${USE_HAMBURGER_MENU_WIDTH}px) {
+    align-items: stretch;
+    flex-direction: column;
+  }
 `;
 
-export const HeaderContent = styled.div<{ isUsingHambuger: boolean }>`
+export const HeaderContent = styled.div`
   display: flex;
-  flex: ${({ isUsingHambuger }) => (isUsingHambuger ? "unset" : "1")};
   justify-content: space-between;
   align-items: center;
   font-size: 15px;
   flex-shrink: 0;
 
-  @media (max-width: 480px) {
+  @media (max-width: ${USE_HAMBURGER_MENU_WIDTH}px) {
     font-size: 13px;
     height: ${({ theme }) => theme.header.heightMobile};
   }
@@ -88,29 +93,33 @@ export const LogoContainer = styled.div`
   }
 `;
 
-export const NavContainer = styled.nav<{
-  isUsingHambuger: boolean;
-  isMenuOpened: boolean;
-}>`
+export const NavContainer = styled.nav`
   display: flex;
   gap: 16px;
-  flex-direction: ${({ isUsingHambuger }) =>
-    isUsingHambuger ? "column" : "row"};
-  padding: ${({ isUsingHambuger }) => (isUsingHambuger ? "8px 0 12px 0" : "0")};
 
   @media (max-width: 480px) {
-    gap: ${({ isUsingHambuger }) => (isUsingHambuger ? "16px" : "8px")};
+    gap: 8px;
+  }
+
+  @media (max-width: ${USE_HAMBURGER_MENU_WIDTH}px) {
+    flex-direction: column;
+    padding: 8px 0 12px 0;
+    gap: 16px;
   }
 
   & > a {
     display: flex;
     align-items: center;
-    padding: ${({ isUsingHambuger }) => (isUsingHambuger ? "4px" : "4px 8px")};
+    padding: 4px 8px;
     color: ${({ theme }) => theme.color.grey[700]};
     font-size: 1em;
 
     @media (max-width: 480px) {
       font-size: 0.85em;
+    }
+
+    @media (max-width: ${USE_HAMBURGER_MENU_WIDTH}px) {
+      padding: 4px;
     }
 
     &:visited {
@@ -152,9 +161,25 @@ export const IconButton = styled(Link)`
 `;
 
 export const HambugerButton = styled(HamburgerSliderReverse)`
-  display: flex;
+  display: none;
   align-items: center;
   padding: 4px;
+
+  @media (max-width: ${USE_HAMBURGER_MENU_WIDTH}px) {
+    display: flex;
+  }
+
+  &:hover {
+    & > div > span {
+      background-color: ${({ theme }) => theme.color.primary};
+      &:before {
+        background-color: ${({ theme }) => theme.color.primary};
+      }
+      &:after {
+        background-color: ${({ theme }) => theme.color.primary};
+      }
+    }
+  }
 
   & > div {
     width: 22px;

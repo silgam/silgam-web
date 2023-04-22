@@ -1,7 +1,7 @@
 import { useAnimate, useMotionValueEvent, useScroll } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
 import { RiKakaoTalkFill } from "react-icons/ri";
 import { useMediaQuery } from "react-responsive";
@@ -12,13 +12,7 @@ import { defaultTheme } from "@/styles/theme";
 
 import * as Styled from "./index.styled";
 
-const USE_HAMBURGER_MENU_WIDTH = 400;
-
 export default function Header() {
-  const [isUsingHambergerMenu, setIsUsingHambergerMenu] = useState(false);
-  const isUsingHambergerMenuQuery = useMediaQuery({
-    query: `(max-width: ${USE_HAMBURGER_MENU_WIDTH}px)`,
-  });
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const [menuScope, animateMenu] = useAnimate();
 
@@ -28,21 +22,27 @@ export default function Header() {
     setIsScrolled(latest > 0);
   });
 
-  useEffect(() => {
-    setIsUsingHambergerMenu(isUsingHambergerMenuQuery);
-  }, [isUsingHambergerMenuQuery]);
-
   const handleMenuButtonClick = (options?: { open?: boolean }) => {
     let { open } = options ?? {};
     open = open ?? !isMenuOpened;
 
     animateMenu(
       menuScope.current,
-      { height: open ? "auto" : defaultTheme.header.heightMobile },
+      { height: open ? "auto" : null },
       { duration: 0.3, bounce: 0, ease: "circOut" },
     );
     setIsMenuOpened(open);
   };
+
+  useMediaQuery(
+    { maxWidth: Styled.USE_HAMBURGER_MENU_WIDTH },
+    undefined,
+    (matches) => {
+      if (!matches) {
+        handleMenuButtonClick({ open: false });
+      }
+    },
+  );
 
   const onBackgroundTouchStart = () => {
     handleMenuButtonClick({ open: false });
@@ -50,39 +50,28 @@ export default function Header() {
 
   return (
     <>
-      {isUsingHambergerMenu && (
-        <Styled.TouchableBackground
-          isMenuOpened={isMenuOpened}
-          onTouchStart={onBackgroundTouchStart}
-          onPointerDown={onBackgroundTouchStart}
-        />
-      )}
-      <Styled.HeaderContainer
-        ref={menuScope}
-        showBorder={isScrolled}
-        isUsingHambuger={isUsingHambergerMenu}
-      >
-        <Styled.HeaderContentWrapper isUsingHambuger={isUsingHambergerMenu}>
-          <Styled.HeaderContent isUsingHambuger={isUsingHambergerMenu}>
+      <Styled.TouchableBackground
+        isMenuOpened={isMenuOpened}
+        onTouchStart={onBackgroundTouchStart}
+        onPointerDown={onBackgroundTouchStart}
+      />
+      <Styled.HeaderContainer ref={menuScope} showBorder={isScrolled}>
+        <Styled.HeaderContentWrapper>
+          <Styled.HeaderContent>
             <Link href={ROUTES.HOME} style={{ textDecoration: "none" }}>
               <Styled.LogoContainer>
                 <Image src={appIcon} alt="app_icon" />
                 <span>실감</span>
               </Styled.LogoContainer>
             </Link>
-            {isUsingHambergerMenu && (
-              <Styled.HambugerButton
-                isActive={isMenuOpened}
-                toggleButton={handleMenuButtonClick}
-                buttonWidth={28}
-                barColor={defaultTheme.color.grey[600]}
-              />
-            )}
+            <Styled.HambugerButton
+              isActive={isMenuOpened}
+              toggleButton={handleMenuButtonClick}
+              buttonWidth={28}
+              barColor={defaultTheme.color.grey[600]}
+            />
           </Styled.HeaderContent>
-          <Styled.NavContainer
-            isUsingHambuger={isUsingHambergerMenu}
-            isMenuOpened={isMenuOpened}
-          >
+          <Styled.NavContainer>
             <Link href={ROUTES.SUPPORT} target="_blank">
               문의
             </Link>
