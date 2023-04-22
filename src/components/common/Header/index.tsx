@@ -1,7 +1,7 @@
 import { useAnimate, useMotionValueEvent, useScroll } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
 import { RiKakaoTalkFill } from "react-icons/ri";
 import { useMediaQuery } from "react-responsive";
@@ -15,17 +15,22 @@ import * as Styled from "./index.styled";
 const USE_HAMBURGER_MENU_WIDTH = 400;
 
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const isUsingHambergerMenu = useMediaQuery({
+  const [isUsingHambergerMenu, setIsUsingHambergerMenu] = useState(false);
+  const isUsingHambergerMenuQuery = useMediaQuery({
     query: `(max-width: ${USE_HAMBURGER_MENU_WIDTH}px)`,
   });
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const [menuScope, animateMenu] = useAnimate();
 
+  const [isScrolled, setIsScrolled] = useState(false);
   const { scrollY } = useScroll();
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 0);
   });
+
+  useEffect(() => {
+    setIsUsingHambergerMenu(isUsingHambergerMenuQuery);
+  }, [isUsingHambergerMenuQuery]);
 
   const handleMenuButtonClick = (options?: { open?: boolean }) => {
     let { open } = options ?? {};
