@@ -2,6 +2,19 @@ import Link from "next/link";
 import { HamburgerSliderReverse } from "react-animated-burgers";
 import styled from "styled-components";
 
+export const TouchableBackground = styled.div<{ isMenuOpened: boolean }>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: ${({ isMenuOpened }) => (isMenuOpened ? "1" : "0")};
+  transition: opacity 0.1s ease-in-out;
+  pointer-events: ${({ isMenuOpened }) => (isMenuOpened ? "auto" : "none")};
+`;
+
 export const HeaderContainer = styled.header<{
   showBorder: boolean;
   isUsingHambuger: boolean;
@@ -15,7 +28,7 @@ export const HeaderContainer = styled.header<{
   border-bottom: ${({ showBorder }) =>
     showBorder ? "1px solid #e5e5e5;" : "1px solid transparent;"};
   backdrop-filter: saturate(180%) blur(20px);
-  z-index: 2;
+  z-index: 10;
   padding: 0 20px;
   overflow-y: hidden;
   justify-content: center;

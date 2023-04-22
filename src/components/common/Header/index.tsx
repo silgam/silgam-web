@@ -27,64 +27,79 @@ export default function Header() {
     setIsScrolled(latest > 0);
   });
 
-  const handleMenuButtonClick = () => {
+  const handleMenuButtonClick = ({ open }: { open?: boolean }) => {
+    open = open ?? !isMenuOpened;
+
     animateMenu(
       menuScope.current,
-      { height: isMenuOpened ? defaultTheme.header.heightMobile : "auto" },
+      { height: open ? "auto" : defaultTheme.header.heightMobile },
       { duration: 0.3, bounce: 0, ease: "circOut" },
     );
-    setIsMenuOpened(!isMenuOpened);
+    setIsMenuOpened(open);
+  };
+
+  const onBackgroundTouchStart = () => {
+    handleMenuButtonClick({ open: false });
   };
 
   return (
-    <Styled.HeaderContainer
-      ref={menuScope}
-      showBorder={isScrolled}
-      isUsingHambuger={isUsingHambergerMenu}
-    >
-      <Styled.HeaderContentWrapper isUsingHambuger={isUsingHambergerMenu}>
-        <Styled.HeaderContent isUsingHambuger={isUsingHambergerMenu}>
-          <Link href={ROUTES.HOME} style={{ textDecoration: "none" }}>
-            <Styled.LogoContainer>
-              <Image src={appIcon} alt="app_icon" />
-              <span>실감</span>
-            </Styled.LogoContainer>
-          </Link>
-          {isUsingHambergerMenu && (
-            <Styled.HambugerButton
-              isActive={isMenuOpened}
-              toggleButton={handleMenuButtonClick}
-              buttonWidth={28}
-              barColor={defaultTheme.color.grey[600]}
-            />
-          )}
-        </Styled.HeaderContent>
-        <Styled.NavContainer
-          isUsingHambuger={isUsingHambergerMenu}
+    <>
+      {isUsingHambergerMenu && (
+        <Styled.TouchableBackground
           isMenuOpened={isMenuOpened}
-        >
-          <Link href={ROUTES.SUPPORT} target="_blank">
-            문의
-          </Link>
-          <Link href={ROUTES.DOWNLOAD} target="_blank">
-            다운로드
-          </Link>
-          <Styled.SnsButtonsContainer>
-            <Styled.IconButton href={ROUTES.OPEN_CHAT} target="_blank">
-              <RiKakaoTalkFill />
-            </Styled.IconButton>
-            <Styled.IconButton href={ROUTES.INSTAGRAM} target="_blank">
-              <BsInstagram />
-            </Styled.IconButton>
-            <Styled.IconButton href={ROUTES.FACEBOOK} target="_blank">
-              <BsFacebook />
-            </Styled.IconButton>
-            <Styled.IconButton href={ROUTES.YOUTUBE} target="_blank">
-              <BsYoutube />
-            </Styled.IconButton>
-          </Styled.SnsButtonsContainer>
-        </Styled.NavContainer>
-      </Styled.HeaderContentWrapper>
-    </Styled.HeaderContainer>
+          onTouchStart={onBackgroundTouchStart}
+          onPointerDown={onBackgroundTouchStart}
+        />
+      )}
+      <Styled.HeaderContainer
+        ref={menuScope}
+        showBorder={isScrolled}
+        isUsingHambuger={isUsingHambergerMenu}
+      >
+        <Styled.HeaderContentWrapper isUsingHambuger={isUsingHambergerMenu}>
+          <Styled.HeaderContent isUsingHambuger={isUsingHambergerMenu}>
+            <Link href={ROUTES.HOME} style={{ textDecoration: "none" }}>
+              <Styled.LogoContainer>
+                <Image src={appIcon} alt="app_icon" />
+                <span>실감</span>
+              </Styled.LogoContainer>
+            </Link>
+            {isUsingHambergerMenu && (
+              <Styled.HambugerButton
+                isActive={isMenuOpened}
+                toggleButton={handleMenuButtonClick}
+                buttonWidth={28}
+                barColor={defaultTheme.color.grey[600]}
+              />
+            )}
+          </Styled.HeaderContent>
+          <Styled.NavContainer
+            isUsingHambuger={isUsingHambergerMenu}
+            isMenuOpened={isMenuOpened}
+          >
+            <Link href={ROUTES.SUPPORT} target="_blank">
+              문의
+            </Link>
+            <Link href={ROUTES.DOWNLOAD} target="_blank">
+              다운로드
+            </Link>
+            <Styled.SnsButtonsContainer>
+              <Styled.IconButton href={ROUTES.OPEN_CHAT} target="_blank">
+                <RiKakaoTalkFill />
+              </Styled.IconButton>
+              <Styled.IconButton href={ROUTES.INSTAGRAM} target="_blank">
+                <BsInstagram />
+              </Styled.IconButton>
+              <Styled.IconButton href={ROUTES.FACEBOOK} target="_blank">
+                <BsFacebook />
+              </Styled.IconButton>
+              <Styled.IconButton href={ROUTES.YOUTUBE} target="_blank">
+                <BsYoutube />
+              </Styled.IconButton>
+            </Styled.SnsButtonsContainer>
+          </Styled.NavContainer>
+        </Styled.HeaderContentWrapper>
+      </Styled.HeaderContainer>
+    </>
   );
 }
