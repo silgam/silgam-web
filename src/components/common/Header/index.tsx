@@ -27,7 +27,8 @@ export default function Header() {
     setIsScrolled(latest > 0);
   });
 
-  const handleMenuButtonClick = ({ open }: { open?: boolean }) => {
+  const handleMenuButtonClick = (options?: { open?: boolean }) => {
+    let { open } = options ?? {};
     open = open ?? !isMenuOpened;
 
     animateMenu(
