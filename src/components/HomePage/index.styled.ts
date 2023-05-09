@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { defaultTheme } from "@/styles/theme";
+
 export const HomePageContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,7 +21,6 @@ export const FullHeightSection = styled.section`
   );
   padding: ${({ theme }) => theme.header.height} 8px 20vh 8px;
   overflow: hidden;
-  font-size: 1em;
   font-size: 28px;
 
   @media (max-width: 640px) {
@@ -105,6 +106,90 @@ export const ChevronDown = styled.div`
       height: 32px;
     }
   }
+`;
+
+export const ReviewSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  background-color: ${defaultTheme.color.primary};
+  padding: 50px 0 32px 0;
+  position: relative;
+`;
+
+export const ReviewSectionTitle = styled.h2`
+  font-family: "establishRetrosansOTF";
+  font-size: 2.3em;
+  font-weight: 500;
+  color: ${defaultTheme.color.primary};
+  text-align: center;
+  background-color: white;
+  margin-bottom: 12px;
+`;
+
+export const ReviewSectionContent = styled.div`
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+export const ReviewContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 20px;
+`;
+
+export const ReviewCard = styled.div<{
+  width: number;
+  backgroundColor: string;
+}>`
+  width: ${({ width }) => `${width}px`};
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  border-radius: 15px;
+  padding: 20px 24px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+  line-height: 1.5;
+  font-size: 0.9em;
+  color: ${({ theme }) => theme.color.grey[700]};
+  flex: 1;
+`;
+
+export const ReviewTitle = styled.h3`
+  font-size: 0.85em;
+  font-weight: 500;
+  color: white;
+  flex-shrink: 0;
+`;
+
+export const ReviewSectionOverlayLeft = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(40, 53, 147, 0.2) 0%,
+    rgba(40, 53, 147, 0) 100%
+  );
+`;
+
+export const ReviewSectionOverlayRight = styled(ReviewSectionOverlayLeft)`
+  left: auto;
+  right: 0;
+  background: linear-gradient(
+    270deg,
+    rgba(40, 53, 147, 0.2) 0%,
+    rgba(40, 53, 147, 0) 100%
+  );
 `;
 
 export const CommentsSection = styled.div`

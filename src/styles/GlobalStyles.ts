@@ -1,6 +1,11 @@
 import * as styled from "styled-components";
 
 const GlobalStyles = styled.createGlobalStyle`
+  @font-face {
+    font-family: "establishRetrosansOTF";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRetrosansOTF.woff")
+      format("woff");
+  }
   * {
     font-family: "Nanum Gothic", sans-serif;
     margin: 0;

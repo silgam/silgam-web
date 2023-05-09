@@ -17,7 +17,16 @@ import { Bold, Superscript } from "../common/Text/index.styled";
 import * as Styled from "./index.styled";
 import MockupSection from "./MockupSection";
 
-export default function HomePage() {
+export interface HomePageProps {
+  reviews: {
+    title: string;
+    content: string;
+    backgroundColor: string;
+    width: number;
+  }[];
+}
+
+export default function HomePage({ reviews }: HomePageProps) {
   const noiseElements = [
     "시험지 넘기는",
     "글씨 쓰는",
@@ -39,6 +48,7 @@ export default function HomePage() {
 
   const [noiseElementIndex, setNoiseElementIndex] = useState(0);
   const clockMockupSectionRef = createRef<HTMLDivElement>();
+  const reviewSectionContentRef = createRef<HTMLDivElement>();
 
   useEffect(() => {
     const intervalId = setInterval(
@@ -56,6 +66,15 @@ export default function HomePage() {
       });
     }
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      reviewSectionContentRef.current?.scrollBy({ left: 1 });
+    }, 20);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [reviewSectionContentRef]);
 
   return (
     <Styled.HomePageContainer>
@@ -93,6 +112,26 @@ export default function HomePage() {
           </motion.div>
         </Styled.ChevronDown>
       </Styled.FullHeightSection>
+      <Styled.ReviewSection>
+        <Styled.ReviewSectionTitle>
+          실감을 써본 수험생들의 REAL 후기
+        </Styled.ReviewSectionTitle>
+        <Styled.ReviewSectionContent ref={reviewSectionContentRef}>
+          {reviews.map((review, index) => (
+            <Styled.ReviewContainer key={index}>
+              <Styled.ReviewCard
+                width={review.width}
+                backgroundColor={review.backgroundColor}
+              >
+                {review.content}
+              </Styled.ReviewCard>
+              <Styled.ReviewTitle>{`< ${review.title} >`}</Styled.ReviewTitle>
+            </Styled.ReviewContainer>
+          ))}
+        </Styled.ReviewSectionContent>
+        <Styled.ReviewSectionOverlayLeft />
+        <Styled.ReviewSectionOverlayRight />
+      </Styled.ReviewSection>
       <div ref={clockMockupSectionRef}>
         <MockupSection
           mockupSrc={clockMockup}
