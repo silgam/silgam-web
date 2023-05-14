@@ -17,16 +17,17 @@ import { Bold, Superscript } from "../common/Text/index.styled";
 import * as Styled from "./index.styled";
 import MockupSection from "./MockupSection";
 
+const reviewCardBackgroundColors = ["#E5EAFB", "#F0E7EB"];
+
 export interface HomePageProps {
   reviews: {
     title: string;
     content: string;
-    backgroundColor: string;
     width: number;
   }[];
 }
 
-export default function HomePage({ reviews }: HomePageProps) {
+export default function HomePage({ reviews: reviewsJson }: HomePageProps) {
   const noiseElements = [
     "시험지 넘기는",
     "글씨 쓰는",
@@ -47,6 +48,8 @@ export default function HomePage({ reviews }: HomePageProps) {
   ));
 
   const [noiseElementIndex, setNoiseElementIndex] = useState(0);
+  const [reviews, setReviews] = useState([] as HomePageProps["reviews"]);
+
   const clockMockupSectionRef = createRef<HTMLDivElement>();
   const reviewSectionContentRef = createRef<HTMLDivElement>();
 
@@ -58,14 +61,9 @@ export default function HomePage({ reviews }: HomePageProps) {
     return () => clearTimeout(intervalId);
   }, []);
 
-  const onClickChevronDown = () => {
-    if (clockMockupSectionRef.current) {
-      clockMockupSectionRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
+  useEffect(() => {
+    setReviews(reviewsJson);
+  }, [reviewsJson]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -75,6 +73,15 @@ export default function HomePage({ reviews }: HomePageProps) {
       clearInterval(interval);
     };
   }, [reviewSectionContentRef]);
+
+  const onClickChevronDown = () => {
+    if (clockMockupSectionRef.current) {
+      clockMockupSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
 
   return (
     <Styled.HomePageContainer>
@@ -121,10 +128,13 @@ export default function HomePage({ reviews }: HomePageProps) {
             <Styled.ReviewContainer key={index}>
               <Styled.ReviewCard
                 width={review.width}
-                backgroundColor={review.backgroundColor}
-              >
-                {review.content}
-              </Styled.ReviewCard>
+                backgroundColor={
+                  reviewCardBackgroundColors[
+                    index % reviewCardBackgroundColors.length
+                  ]
+                }
+                dangerouslySetInnerHTML={{ __html: review.content }}
+              />
               <Styled.ReviewTitle>{`< ${review.title} >`}</Styled.ReviewTitle>
             </Styled.ReviewContainer>
           ))}

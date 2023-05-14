@@ -133,6 +133,7 @@ export const ReviewSectionContent = styled.div`
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  padding: 0 5%;
 
   &::-webkit-scrollbar {
     display: none;
@@ -152,6 +153,7 @@ export const ReviewCard = styled.div<{
   backgroundColor: string;
 }>`
   width: ${({ width }) => `${width}px`};
+  max-width: 95vw;
   background-color: ${({ backgroundColor }) => backgroundColor};
   border-radius: 15px;
   padding: 20px 24px;
@@ -160,6 +162,7 @@ export const ReviewCard = styled.div<{
   font-size: 0.9em;
   color: ${({ theme }) => theme.color.grey[700]};
   flex: 1;
+  white-space: pre-line;
 `;
 
 export const ReviewTitle = styled.h3`
