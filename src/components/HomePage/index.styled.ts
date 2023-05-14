@@ -115,6 +115,10 @@ export const ReviewSection = styled.section`
   background-color: ${defaultTheme.color.primary};
   padding: 50px 0 32px 0;
   position: relative;
+
+  @media (max-width: 640px) {
+    font-size: 12px;
+  }
 `;
 
 export const ReviewSectionTitle = styled.h2`
@@ -125,6 +129,7 @@ export const ReviewSectionTitle = styled.h2`
   text-align: center;
   background-color: white;
   margin-bottom: 12px;
+  padding: 0 12px;
 `;
 
 export const ReviewSectionContent = styled.div`
@@ -159,17 +164,29 @@ export const ReviewCard = styled.div<{
   padding: 20px 24px;
   box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
   line-height: 1.5;
-  font-size: 0.9em;
+  font-size: 15px;
   color: ${({ theme }) => theme.color.grey[700]};
   flex: 1;
   white-space: pre-line;
+
+  @media (max-width: 640px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+  }
 `;
 
 export const ReviewTitle = styled.h3`
-  font-size: 0.85em;
+  font-size: 13px;
   font-weight: 500;
   color: white;
   flex-shrink: 0;
+
+  @media (max-width: 640px) {
+    font-size: 12px;
+  }
 `;
 
 export const ReviewSectionOverlayLeft = styled.div`
