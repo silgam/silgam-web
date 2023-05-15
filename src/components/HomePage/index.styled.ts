@@ -164,7 +164,7 @@ export const ReviewCard = styled.div<{
   padding: 20px 24px;
   box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
   line-height: 1.5;
-  font-size: 15px;
+  font-size: 14.4px;
   color: ${({ theme }) => theme.color.grey[700]};
   flex: 1;
   white-space: pre-line;

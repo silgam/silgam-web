@@ -67,7 +67,13 @@ export default function HomePage({ reviews: reviewsJson }: HomePageProps) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      reviewSectionContentRef.current?.scrollBy({ left: 1 });
+      const current = reviewSectionContentRef.current;
+      if (!current) return;
+
+      current.scrollBy({ left: 1 });
+      if (current.scrollLeft >= current.scrollWidth - current.offsetWidth - 1) {
+        current.scrollTo({ left: 0 });
+      }
     }, 20);
     return () => {
       clearInterval(interval);
