@@ -129,7 +129,8 @@ export const ReviewSectionTitle = styled.h2`
   text-align: center;
   background-color: white;
   margin-bottom: 12px;
-  padding: 0 12px;
+  padding: 4px 20px;
+  line-height: 1;
 `;
 
 export const ReviewSectionContent = styled.div`
