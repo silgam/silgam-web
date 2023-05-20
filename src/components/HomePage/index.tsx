@@ -127,7 +127,8 @@ export default function HomePage({ reviews: reviewsJson }: HomePageProps) {
       </Styled.FullHeightSection>
       <Styled.ReviewSection>
         <Styled.ReviewSectionTitle>
-          실감을 써본 수험생들의 REAL 후기
+          <span>실감을 써본 수험생들의</span>
+          <span>REAL 후기</span>
         </Styled.ReviewSectionTitle>
         <Styled.ReviewSectionContent ref={reviewSectionContentRef}>
           {reviews.map((review, index) => (

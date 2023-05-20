@@ -122,15 +122,26 @@ export const ReviewSection = styled.section`
 `;
 
 export const ReviewSectionTitle = styled.div`
-  font-family: "establishRetrosansOTF";
-  font-size: 2.3em;
-  font-weight: 500;
-  color: ${defaultTheme.color.primary};
-  text-align: center;
   background-color: white;
   margin-bottom: 12px;
   padding: 4px 20px;
-  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  & > span {
+    line-height: 1;
+    font-family: "establishRetrosansOTF";
+    font-size: 2.3em;
+    font-weight: 500;
+    color: ${defaultTheme.color.primary};
+    text-align: center;
+
+    @media (max-width: 360px) {
+      font-size: 2em;
+    }
+  }
 `;
 
 export const ReviewSectionContent = styled.div`
