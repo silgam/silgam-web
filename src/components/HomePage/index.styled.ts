@@ -121,7 +121,7 @@ export const ReviewSection = styled.section`
   }
 `;
 
-export const ReviewSectionTitle = styled.h2`
+export const ReviewSectionTitle = styled.div`
   font-family: "establishRetrosansOTF";
   font-size: 2.3em;
   font-weight: 500;
