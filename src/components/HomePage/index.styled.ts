@@ -11,28 +11,38 @@ export const FullHeightSection = styled.section`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(
-    rgba(40, 53, 147, 0) 0%,
-    rgba(40, 53, 147, 0) 10%,
-    rgba(40, 53, 147, 0.2) 80%,
-    rgba(40, 53, 147, 0.2) 100%
-  );
-  padding: ${({ theme }) => theme.header.height} 8px 20vh 8px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  background-image: url("/static/images/landing_image.png");
+  background-size: cover;
+  background-position-x: 20%;
+  padding: ${({ theme }) => theme.header.height} 8px 8px 8px;
   overflow: hidden;
   font-size: 28px;
 
   @media (max-width: 640px) {
     font-size: 20px;
   }
+
+  @media (max-width: 480px) {
+    padding: ${({ theme }) => theme.header.heightMobile} 8px 8px 8px;
+  }
+`;
+
+export const TitlesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 0 10vw 15vh 0;
 `;
 
 export const HomePageSubtitle = styled.h2`
   font-size: 1em;
   font-weight: 400;
-  color: black;
-  text-align: center;
+  color: white;
+  text-align: right;
+  line-height: 1.3;
 
   @media (max-width: 480px) {
     font-size: 0.7em;
@@ -42,10 +52,10 @@ export const HomePageSubtitle = styled.h2`
 export const HomePageTitle = styled.h1`
   font-size: 2.14em;
   font-weight: 900;
-  color: black;
+  color: white;
   margin-top: 20px;
   margin-bottom: 60px;
-  text-align: center;
+  text-align: right;
 
   @media (max-width: 480px) {
     margin-top: 8px;
@@ -93,13 +103,14 @@ export const DownloadButton = styled.div`
 export const ChevronDown = styled.div`
   position: absolute;
   bottom: 3vh;
+  align-self: center;
   padding: 20px;
   cursor: pointer;
 
   svg {
     width: 48px;
     height: 48px;
-    color: rgba(0, 0, 0, 0.3);
+    color: rgba(255, 255, 255, 0.3);
 
     @media (max-width: 640px) {
       width: 32px;

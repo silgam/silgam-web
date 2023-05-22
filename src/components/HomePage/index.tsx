@@ -50,7 +50,7 @@ export default function HomePage({ reviews: reviewsJson }: HomePageProps) {
   const [noiseElementIndex, setNoiseElementIndex] = useState(0);
   const [reviews, setReviews] = useState([] as HomePageProps["reviews"]);
 
-  const clockMockupSectionRef = createRef<HTMLDivElement>();
+  const firstSectionRef = createRef<HTMLDivElement>();
   const reviewSectionContentRef = createRef<HTMLDivElement>();
 
   useEffect(() => {
@@ -81,35 +81,41 @@ export default function HomePage({ reviews: reviewsJson }: HomePageProps) {
   }, [reviewSectionContentRef]);
 
   const onClickChevronDown = () => {
-    if (clockMockupSectionRef.current) {
-      clockMockupSectionRef.current.scrollIntoView({
+    if (firstSectionRef.current) {
+      console.log(firstSectionRef.current);
+
+      window.scrollTo({
+        top: firstSectionRef.current.clientHeight - 54,
         behavior: "smooth",
-        block: "start",
       });
     }
   };
 
   return (
     <Styled.HomePageContainer>
-      <Styled.FullHeightSection>
-        <Styled.HomePageSubtitle>
-          시험장의 변수 때문에 우리의 노력이 헛되지 않게
-        </Styled.HomePageSubtitle>
-        <Styled.HomePageTitle>실전 감각, 실감</Styled.HomePageTitle>
-        <Styled.DownloadButtonsContainer>
-          <Link href={ROUTES.APP_STORE} target="_blank">
-            <Styled.DownloadButton>
-              <Image src={appleIcon} alt="appleIcon" />
-              App Store
-            </Styled.DownloadButton>
-          </Link>
-          <Link href={ROUTES.GOOGLE_PLAY} target="_blank">
-            <Styled.DownloadButton>
-              <Image src={googlePlayIcon} alt="googlePlayIcon" />
-              Google Play
-            </Styled.DownloadButton>
-          </Link>
-        </Styled.DownloadButtonsContainer>
+      <Styled.FullHeightSection ref={firstSectionRef}>
+        <Styled.TitlesContainer>
+          <Styled.HomePageSubtitle>
+            시험장의 변수 때문에
+            <br />
+            우리의 노력이 헛되지 않게
+          </Styled.HomePageSubtitle>
+          <Styled.HomePageTitle>실전 감각, 실감</Styled.HomePageTitle>
+          <Styled.DownloadButtonsContainer>
+            <Link href={ROUTES.APP_STORE} target="_blank">
+              <Styled.DownloadButton>
+                <Image src={appleIcon} alt="appleIcon" />
+                App Store
+              </Styled.DownloadButton>
+            </Link>
+            <Link href={ROUTES.GOOGLE_PLAY} target="_blank">
+              <Styled.DownloadButton>
+                <Image src={googlePlayIcon} alt="googlePlayIcon" />
+                Google Play
+              </Styled.DownloadButton>
+            </Link>
+          </Styled.DownloadButtonsContainer>
+        </Styled.TitlesContainer>
         <Styled.ChevronDown onClick={onClickChevronDown}>
           <motion.div
             initial={{ y: 0 }}
@@ -149,7 +155,7 @@ export default function HomePage({ reviews: reviewsJson }: HomePageProps) {
         <Styled.ReviewSectionOverlayLeft />
         <Styled.ReviewSectionOverlayRight />
       </Styled.ReviewSection>
-      <div ref={clockMockupSectionRef}>
+      <div>
         <MockupSection
           mockupSrc={clockMockup}
           title="시험장 시뮬레이션"
