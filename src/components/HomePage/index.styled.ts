@@ -11,8 +11,6 @@ export const FullHeightSection = styled.section`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
   background-image: url("/static/images/landing_image.png");
   background-size: cover;
   background-position-x: 20%;
@@ -30,11 +28,13 @@ export const FullHeightSection = styled.section`
 `;
 
 export const TitlesContainer = styled.div`
+  position: absolute;
+  bottom: 18vh;
+  right: 10vw;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   overflow: hidden;
-  padding: 0 10vw 15vh 0;
 `;
 
 export const HomePageSubtitle = styled.h2`
