@@ -41,7 +41,7 @@ const ImageButton = styled(SectionImage)`
 export const ImageButtonPurchase = styled(ImageButton)`
   width: calc(592 / 700 * 100%);
   max-width: calc(592 / 700 * 800px);
-  top: calc((608.5 - 30) / 984 * 100%);
+  top: calc((553 - 30) / 862 * 100%);
 `;
 
 export const ImageButtonTrial = styled(ImageButton)`
