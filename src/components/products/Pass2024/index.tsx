@@ -11,6 +11,7 @@ import section5Image from "@/static/images/pass_page/pass2024/section5.png";
 import section6Image from "@/static/images/pass_page/pass2024/section6.png";
 import section7Image from "@/static/images/pass_page/pass2024/section7.png";
 import section8Image from "@/static/images/pass_page/pass2024/section8.png";
+import section9Image from "@/static/images/pass_page/pass2024/section9.png";
 
 import * as Styled from "./index.styled";
 
@@ -70,11 +71,14 @@ export default function Pass2024Page() {
         <Styled.Section>
           <Styled.SectionImage src={section5Image} alt="section" />
         </Styled.Section>
-        <Styled.Section ref={section6Ref} id="section6">
+        <Styled.Section>
           <Styled.SectionImage src={section6Image} alt="section" />
         </Styled.Section>
-        <Styled.Section>
+        <Styled.Section ref={section6Ref} id="section6">
           <Styled.SectionImage src={section7Image} alt="section" />
+        </Styled.Section>
+        <Styled.Section>
+          <Styled.SectionImage src={section8Image} alt="section" />
           <Styled.ImageButtonPurchase
             onClick={purchase}
             src={purchaseButtonImage}
@@ -83,7 +87,7 @@ export default function Pass2024Page() {
           />
         </Styled.Section>
         <Styled.Section>
-          <Styled.SectionImage src={section8Image} alt="section" />
+          <Styled.SectionImage src={section9Image} alt="section" />
           <Styled.ImageButtonTrial
             onClick={trial}
             src={trialButtonImage}
