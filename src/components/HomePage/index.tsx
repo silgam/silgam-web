@@ -9,6 +9,7 @@ import { ROUTES } from "@/consts/routes";
 import appleIcon from "@/static/images/icons/apple_icon.png";
 import googlePlayIcon from "@/static/images/icons/google_play_icon.png";
 import clockMockup from "@/static/images/mockups/clock.png";
+import lapTimeMockup from "@/static/images/mockups/lap_time.png";
 import noiseSettingsMockup from "@/static/images/mockups/noise_settings.png";
 import recordDetailMockup from "@/static/images/mockups/record_detail.png";
 import statsMockup from "@/static/images/mockups/stats.png";
@@ -159,6 +160,7 @@ export default function HomePage({ reviews: reviewsJson }: HomePageProps) {
         <MockupSection
           mockupSrc={clockMockup}
           title="시험장 시뮬레이션"
+          grayBackground
           description={
             <>
               과목별 시험 시간에 맞춰 표시되는 <Bold>아날로그 시계</Bold>,
@@ -168,12 +170,12 @@ export default function HomePage({ reviews: reviewsJson }: HomePageProps) {
               <Bold>수능 시험장의 현장감</Bold>을 극대화할 수 있어요.
             </>
           }
-          grayBackground
         />
       </div>
       <MockupSection
         mockupSrc={noiseSettingsMockup}
         title="랜덤재생 소음 ASMR"
+        rightImage
         description={
           <>
             <TextTransition>
@@ -184,11 +186,28 @@ export default function HomePage({ reviews: reviewsJson }: HomePageProps) {
             <Superscript>1</Superscript>
           </>
         }
-        rightImage
+      />
+      <MockupSection
+        mockupSrc={lapTimeMockup}
+        title="랩타임 기능"
+        grayBackground
+        description={
+          <>
+            독서와 문학을 푸는 데 걸린 시간부터
+            <br />
+            마킹과 검토에 걸린 시간까지.
+            <br />
+            <Bold>랩타임</Bold> 기능을 통해 손쉽게 기록하고
+            <br />
+            실전을 위한 <Bold>시간분배</Bold>를 연습할 수 있어요.
+            <br />
+          </>
+        }
       />
       <MockupSection
         mockupSrc={recordDetailMockup}
         title="시험 후 피드백 기록"
+        rightImage
         description={
           <>
             모의고사 응시 후 바로 <Bold>점수</Bold>와 <Bold>등급</Bold>을
@@ -199,11 +218,11 @@ export default function HomePage({ reviews: reviewsJson }: HomePageProps) {
             언제든지 <Bold>간편히 복습</Bold>할 수 있어요.
           </>
         }
-        grayBackground
       />
       <MockupSection
         mockupSrc={statsMockup}
         title="모의고사 통계"
+        grayBackground
         description={
           <>
             기록한 모의고사들에 대해 <Bold>응시한 횟수</Bold>, <br />
@@ -213,7 +232,6 @@ export default function HomePage({ reviews: reviewsJson }: HomePageProps) {
             <Superscript>2</Superscript>
           </>
         }
-        rightImage
       />
       <Styled.CommentsSection>
         <Styled.CommentsContentWrapper>
