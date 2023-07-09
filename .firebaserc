@@ -5,9 +5,6 @@
   "targets": {
     "silgam-app": {
       "hosting": {
-        "dev": [
-          "silgam-dev"
-        ],
         "main": [
           "silgam-app"
         ]
