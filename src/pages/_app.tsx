@@ -1,6 +1,8 @@
+import Hotjar from "@hotjar/browser";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Script from "next/script";
+import { useEffect } from "react";
 import { IconContext } from "react-icons";
 import { ThemeProvider } from "styled-components";
 
@@ -8,6 +10,14 @@ import GlobalStyles from "@/styles/GlobalStyles";
 import { defaultTheme } from "@/styles/theme";
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    const siteId = 3666393;
+    const hotjarVersion = 6;
+    Hotjar.init(siteId, hotjarVersion, {
+      debug: process.env.NODE_ENV !== "production",
+    });
+  }, []);
+
   return (
     <>
       <Head>
