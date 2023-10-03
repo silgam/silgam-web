@@ -10,6 +10,7 @@ import section4Image from "@/static/images/pass_page/pass2024/section4.png";
 import section5Image from "@/static/images/pass_page/pass2024/section5.png";
 import section6Image from "@/static/images/pass_page/pass2024/section6.png";
 import section7Image from "@/static/images/pass_page/pass2024/section7.png";
+import section8ImageOld from "@/static/images/pass_page/pass2024/section8.png";
 import section8Image from "@/static/images/pass_page/pass2024/section8_20231003.png";
 import section9Image from "@/static/images/pass_page/pass2024/section9.png";
 
@@ -23,6 +24,7 @@ declare global {
 
 export default function Pass2024Page() {
   const section6Ref = createRef<HTMLDivElement>();
+  const isUsingOld = new Date() < new Date("2023-10-04T00:00:00+09:00");
 
   useEffect(() => {
     const onContextMenu = (e: MouseEvent) => {
@@ -78,13 +80,25 @@ export default function Pass2024Page() {
           <Styled.SectionImage src={section7Image} alt="section" />
         </Styled.Section>
         <Styled.Section>
-          <Styled.SectionImage src={section8Image} alt="section" />
-          <Styled.ImageButtonPurchase
-            onClick={purchase}
-            src={purchaseButtonImage}
-            alt="purchase button"
-            draggable={false}
+          <Styled.SectionImage
+            src={isUsingOld ? section8ImageOld : section8Image}
+            alt="section"
           />
+          {isUsingOld ? (
+            <Styled.ImageButtonPurchaseOld
+              onClick={purchase}
+              src={purchaseButtonImage}
+              alt="purchase button"
+              draggable={false}
+            />
+          ) : (
+            <Styled.ImageButtonPurchase
+              onClick={purchase}
+              src={purchaseButtonImage}
+              alt="purchase button"
+              draggable={false}
+            />
+          )}
         </Styled.Section>
         <Styled.Section>
           <Styled.SectionImage src={section9Image} alt="section" />
