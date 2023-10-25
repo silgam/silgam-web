@@ -11,7 +11,7 @@
   "dependencies": {
     "@hotjar/browser": "^1.0.9",
     "framer-motion": "^10.12.2",
-    "next": "13.5.0",
+    "next": "13.3.0",
     "react": "18.2.0",
     "react-animated-burgers": "https://github.com/silgam/react-animated-burgers",
     "react-dom": "18.2.0",
