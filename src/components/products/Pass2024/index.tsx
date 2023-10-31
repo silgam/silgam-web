@@ -10,9 +10,8 @@ import section4Image from "@/static/images/pass_page/pass2024/section4.png";
 import section5Image from "@/static/images/pass_page/pass2024/section5.png";
 import section6Image from "@/static/images/pass_page/pass2024/section6.png";
 import section7Image from "@/static/images/pass_page/pass2024/section7.png";
-import section8ImageFirst from "@/static/images/pass_page/pass2024/section8_20231003.png";
-import section8ImageSecond from "@/static/images/pass_page/pass2024/section8_20231016.png";
-import section8ImageThird from "@/static/images/pass_page/pass2024/section8_20231017.png";
+import section8ImageFirst from "@/static/images/pass_page/pass2024/section8_20231017.png";
+import section8ImageSecond from "@/static/images/pass_page/pass2024/section8_20231101.png";
 import section9Image from "@/static/images/pass_page/pass2024/section9.png";
 
 import * as Styled from "./index.styled";
@@ -26,9 +25,7 @@ declare global {
 export default function Pass2024Page() {
   const section6Ref = createRef<HTMLDivElement>();
   const now = new Date();
-  const isFirstPeriod = now < new Date("2023-10-16T00:00:00+09:00");
-  const isSecondPeriod =
-    !isFirstPeriod && now < new Date("2023-10-17T00:00:00+09:00");
+  const isFirstPeriod = now < new Date("2023-11-01T00:00:00+09:00");
 
   useEffect(() => {
     const onContextMenu = (e: MouseEvent) => {
@@ -85,13 +82,7 @@ export default function Pass2024Page() {
         </Styled.Section>
         <Styled.Section>
           <Styled.SectionImage
-            src={
-              isFirstPeriod
-                ? section8ImageFirst
-                : isSecondPeriod
-                ? section8ImageSecond
-                : section8ImageThird
-            }
+            src={isFirstPeriod ? section8ImageFirst : section8ImageSecond}
             alt="section"
           />
           <Styled.ImageButtonPurchase
