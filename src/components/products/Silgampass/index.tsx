@@ -3,16 +3,15 @@ import { createRef, useEffect } from "react";
 
 import purchaseButtonImage from "@/static/images/pass_page/button_purchase.png";
 import trialButtonImage from "@/static/images/pass_page/button_trial.png";
-import section1Image from "@/static/images/pass_page/pass2024/section1.png";
-import section2Image from "@/static/images/pass_page/pass2024/section2.png";
-import section3Image from "@/static/images/pass_page/pass2024/section3.png";
-import section4Image from "@/static/images/pass_page/pass2024/section4.png";
-import section5Image from "@/static/images/pass_page/pass2024/section5.png";
-import section6Image from "@/static/images/pass_page/pass2024/section6.png";
-import section7Image from "@/static/images/pass_page/pass2024/section7.png";
-import section8ImageFirst from "@/static/images/pass_page/pass2024/section8_20231017.png";
-import section8ImageSecond from "@/static/images/pass_page/pass2024/section8_20231101.png";
-import section9Image from "@/static/images/pass_page/pass2024/section9.png";
+import section1Image from "@/static/images/pass_page/sections/section1.png";
+import section2Image from "@/static/images/pass_page/sections/section2.png";
+import section3Image from "@/static/images/pass_page/sections/section3.png";
+import section4Image from "@/static/images/pass_page/sections/section4.png";
+import section5Image from "@/static/images/pass_page/sections/section5.png";
+import section6Image from "@/static/images/pass_page/sections/section6.png";
+import section7Image from "@/static/images/pass_page/sections/section7.png";
+import section8Image from "@/static/images/pass_page/sections/section8.png";
+import section9Image from "@/static/images/pass_page/sections/section9.png";
 
 import * as Styled from "./index.styled";
 
@@ -22,10 +21,9 @@ declare global {
   }
 }
 
-export default function Pass2024Page() {
+export default function SilgampassPage() {
   const section6Ref = createRef<HTMLDivElement>();
   const now = new Date();
-  const isFirstPeriod = now < new Date("2023-11-01T00:00:00+09:00");
 
   useEffect(() => {
     const onContextMenu = (e: MouseEvent) => {
@@ -81,10 +79,7 @@ export default function Pass2024Page() {
           <Styled.SectionImage src={section7Image} alt="section" />
         </Styled.Section>
         <Styled.Section>
-          <Styled.SectionImage
-            src={isFirstPeriod ? section8ImageFirst : section8ImageSecond}
-            alt="section"
-          />
+          <Styled.SectionImage src={section8Image} alt="section" />
           <Styled.ImageButtonPurchase
             onClick={purchase}
             src={purchaseButtonImage}
