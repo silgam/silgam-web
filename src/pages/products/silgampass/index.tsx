@@ -1,5 +1,5 @@
 import Layout from "@/components/common/Layout";
-import Pass2024Page from "@/components/products/Pass2024";
+import Pass2024Page from "@/components/products/Silgampass";
 
 export default function Page() {
   return (
