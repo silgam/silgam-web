@@ -53,13 +53,13 @@ const nextConfig = {
       {
         source: "/privacy",
         destination:
-          "https://silgam-app.notion.site/b6696d4cb93c4ad48e212534c2c9bf74",
+          "https://silgam.notion.site/b6696d4cb93c4ad48e212534c2c9bf74",
         permanent: true,
       },
       {
         source: "/terms",
         destination:
-          "https://silgam-app.notion.site/7418b4c2f109487b895263830ae979d6",
+          "https://silgam.notion.site/7418b4c2f109487b895263830ae979d6",
         permanent: true,
       },
     ];
