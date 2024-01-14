@@ -10,6 +10,7 @@ export const ROUTES = {
   YOUTUBE: "/youtube",
   PRIVACY: "/privacy",
   TERMS: "/terms",
+  BLOG: "https://blog.silgam.app",
 };
 
 export const URLS = {

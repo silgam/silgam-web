@@ -78,6 +78,9 @@ export default function Header() {
             <Link href={ROUTES.DOWNLOAD} target="_blank">
               다운로드
             </Link>
+            <Link href={ROUTES.BLOG} target="_blank">
+              블로그
+            </Link>
             <Styled.SnsButtonsContainer>
               <Styled.IconButton href={ROUTES.OPEN_CHAT} target="_blank">
                 <RiKakaoTalkFill />
