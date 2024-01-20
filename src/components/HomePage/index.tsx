@@ -20,12 +20,14 @@ import MockupSection from "./MockupSection";
 
 const reviewCardBackgroundColors = ["#E5EAFB", "#F0E7EB"];
 
+export interface Review {
+  title: string;
+  content: string;
+  width: number;
+}
+
 export interface HomePageProps {
-  reviews: {
-    title: string;
-    content: string;
-    width: number;
-  }[];
+  reviews: Review[];
 }
 
 export default function HomePage({ reviews: reviewsJson }: HomePageProps) {
@@ -49,7 +51,7 @@ export default function HomePage({ reviews: reviewsJson }: HomePageProps) {
   ));
 
   const [noiseElementIndex, setNoiseElementIndex] = useState(0);
-  const [reviews, setReviews] = useState([] as HomePageProps["reviews"]);
+  const [reviews, setReviews] = useState<Review[]>([]);
 
   const firstSectionRef = createRef<HTMLDivElement>();
   const reviewSectionContentRef = createRef<HTMLDivElement>();
