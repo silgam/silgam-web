@@ -148,6 +148,7 @@ export const ReviewSectionTitle = styled.div`
     font-weight: 500;
     color: ${defaultTheme.color.primary};
     text-align: center;
+    margin: 0 4px;
 
     @media (max-width: 360px) {
       font-size: 2em;

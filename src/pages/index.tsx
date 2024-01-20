@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 
 import Layout from "@/components/common/Layout";
 import HomePage, { HomePageProps, Review } from "@/components/HomePage";
@@ -12,7 +12,9 @@ export default function Home(props: HomePageProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
+export const getServerSideProps: GetServerSideProps<
+  HomePageProps
+> = async () => {
   const reviews: Review[] = reviewsJson;
   const startingIndex = Math.floor(Math.random() * reviews.length);
   const randomizedReviews = [

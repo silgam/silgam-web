@@ -2,7 +2,7 @@ import Link from "next/link";
 import { HamburgerSliderReverse } from "react-animated-burgers";
 import styled from "styled-components";
 
-export const USE_HAMBURGER_MENU_WIDTH = 400;
+export const USE_HAMBURGER_MENU_WIDTH = 510;
 
 export const TouchableBackground = styled.div<{ isMenuOpened: boolean }>`
   display: none;
@@ -38,7 +38,7 @@ export const HeaderContainer = styled.header<{
   overflow-y: hidden;
   justify-content: center;
 
-  @media (max-width: 480px) {
+  @media (max-width: ${USE_HAMBURGER_MENU_WIDTH}px) {
     height: ${({ theme }) => theme.header.heightMobile};
   }
 `;
