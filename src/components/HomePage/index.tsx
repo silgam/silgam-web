@@ -85,8 +85,6 @@ export default function HomePage({ reviews: reviewsJson }: HomePageProps) {
 
   const onClickChevronDown = () => {
     if (firstSectionRef.current) {
-      console.log(firstSectionRef.current);
-
       window.scrollTo({
         top: firstSectionRef.current.clientHeight - 54,
         behavior: "smooth",
