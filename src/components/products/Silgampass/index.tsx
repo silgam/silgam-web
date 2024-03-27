@@ -10,7 +10,7 @@ import section4Image from "@/static/images/pass_page/sections/section4.png";
 import section5Image from "@/static/images/pass_page/sections/section5.png";
 import section6Image from "@/static/images/pass_page/sections/section6.png";
 import section7Image from "@/static/images/pass_page/sections/section7.png";
-import section8Image from "@/static/images/pass_page/sections/section8_20240315.png";
+import section8Image from "@/static/images/pass_page/sections/section8_20240328.png";
 import section9Image from "@/static/images/pass_page/sections/section9.png";
 
 import * as Styled from "./index.styled";
