@@ -10,7 +10,8 @@ import section4Image from "@/static/images/pass_page/sections/section4.png";
 import section5Image from "@/static/images/pass_page/sections/section5.png";
 import section6Image from "@/static/images/pass_page/sections/section6.png";
 import section7Image from "@/static/images/pass_page/sections/section7.png";
-import section8Image from "@/static/images/pass_page/sections/section8_20240328.png";
+import section8ImageFirst from "@/static/images/pass_page/sections/section8_20240328.png";
+import section8ImageSecond from "@/static/images/pass_page/sections/section8_20240401.png";
 import section9Image from "@/static/images/pass_page/sections/section9.png";
 
 import * as Styled from "./index.styled";
@@ -23,7 +24,7 @@ declare global {
 
 export default function SilgampassPage() {
   const section6Ref = createRef<HTMLDivElement>();
-  const isFirstPeriod = new Date() < new Date("2024-02-13T00:00:00+09:00");
+  const isFirstPeriod = new Date() < new Date("2024-04-01T00:00:00+09:00");
 
   useEffect(() => {
     const onContextMenu = (e: MouseEvent) => {
@@ -79,7 +80,10 @@ export default function SilgampassPage() {
           <Styled.SectionImage src={section7Image} alt="section" />
         </Styled.Section>
         <Styled.Section>
-          <Styled.SectionImage src={section8Image} alt="section" />
+          <Styled.SectionImage
+            src={isFirstPeriod ? section8ImageFirst : section8ImageSecond}
+            alt="section"
+          />
           <Styled.ImageButtonPurchase
             onClick={purchase}
             src={purchaseButtonImage}
