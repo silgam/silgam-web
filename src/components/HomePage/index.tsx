@@ -15,22 +15,15 @@ import recordDetailMockup from "@/static/images/mockups/record_detail.png";
 import statsMockup from "@/static/images/mockups/stats.png";
 
 import { Bold, Superscript } from "../common/Text/index.styled";
+import ReviewSection, { Review } from "../ReviewSection";
 import * as Styled from "./index.styled";
 import MockupSection from "./MockupSection";
-
-const reviewCardBackgroundColors = ["#E5EAFB", "#F0E7EB"];
-
-export interface Review {
-  title: string;
-  content: string;
-  width: number;
-}
 
 export interface HomePageProps {
   reviews: Review[];
 }
 
-export default function HomePage({ reviews: reviewsJson }: HomePageProps) {
+export default function HomePage({ reviews }: HomePageProps) {
   const noiseElements = [
     "시험지 넘기는",
     "글씨 쓰는",
@@ -51,10 +44,8 @@ export default function HomePage({ reviews: reviewsJson }: HomePageProps) {
   ));
 
   const [noiseElementIndex, setNoiseElementIndex] = useState(0);
-  const [reviews, setReviews] = useState<Review[]>([]);
 
   const firstSectionRef = createRef<HTMLDivElement>();
-  const reviewSectionContentRef = createRef<HTMLDivElement>();
 
   useEffect(() => {
     const intervalId = setInterval(
@@ -63,25 +54,6 @@ export default function HomePage({ reviews: reviewsJson }: HomePageProps) {
     );
     return () => clearTimeout(intervalId);
   }, []);
-
-  useEffect(() => {
-    setReviews(reviewsJson);
-  }, [reviewsJson]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const current = reviewSectionContentRef.current;
-      if (!current) return;
-
-      current.scrollBy({ left: 1 });
-      if (current.scrollLeft >= current.scrollWidth - current.offsetWidth - 1) {
-        current.scrollTo({ left: 0 });
-      }
-    }, 20);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [reviewSectionContentRef]);
 
   const onClickChevronDown = () => {
     if (firstSectionRef.current) {
@@ -132,30 +104,7 @@ export default function HomePage({ reviews: reviewsJson }: HomePageProps) {
           </motion.div>
         </Styled.ChevronDown>
       </Styled.FullHeightSection>
-      <Styled.ReviewSection>
-        <Styled.ReviewSectionTitle>
-          <span>실감을 써본 수험생들의</span>
-          <span>REAL 후기</span>
-        </Styled.ReviewSectionTitle>
-        <Styled.ReviewSectionContent ref={reviewSectionContentRef}>
-          {reviews.map((review, index) => (
-            <Styled.ReviewContainer key={index}>
-              <Styled.ReviewCard
-                width={review.width}
-                backgroundColor={
-                  reviewCardBackgroundColors[
-                    index % reviewCardBackgroundColors.length
-                  ]
-                }
-                dangerouslySetInnerHTML={{ __html: review.content }}
-              />
-              <Styled.ReviewTitle>{`< ${review.title} >`}</Styled.ReviewTitle>
-            </Styled.ReviewContainer>
-          ))}
-        </Styled.ReviewSectionContent>
-        <Styled.ReviewSectionOverlayLeft />
-        <Styled.ReviewSectionOverlayRight />
-      </Styled.ReviewSection>
+      <ReviewSection reviews={reviews} />
       <div>
         <MockupSection
           mockupSrc={clockMockup}
