@@ -1,7 +1,8 @@
 import { GetServerSideProps } from "next";
 
 import Layout from "@/components/common/Layout";
-import HomePage, { HomePageProps, Review } from "@/components/HomePage";
+import HomePage, { HomePageProps } from "@/components/HomePage";
+import { Review } from "@/components/ReviewSection";
 import reviewsJson from "@/static/data/reviews.json";
 
 export default function Home(props: HomePageProps) {
