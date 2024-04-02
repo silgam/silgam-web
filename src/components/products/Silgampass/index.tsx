@@ -68,6 +68,7 @@ export default function SilgampassPage({ reviews }: SilgampassPageProps) {
           <Styled.SectionImage src={section1Image} alt="section" />
         </Styled.Section>
         <ReviewSection reviews={reviews} />
+        <div style={{ height: "28px" }} />
         <Styled.Section>
           <Styled.SectionImage src={section2Image} alt="section" />
         </Styled.Section>
