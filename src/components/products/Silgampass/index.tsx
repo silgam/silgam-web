@@ -50,7 +50,8 @@ export default function SilgampassPage({ reviews }: SilgampassPageProps) {
       document.removeEventListener("contextmenu", onContextMenu);
       document.removeEventListener("scroll", onScroll);
     };
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const purchase = () => {
     window.FlutterWebView?.postMessage("purchase");
