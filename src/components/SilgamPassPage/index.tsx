@@ -28,7 +28,7 @@ export interface SilgampassPageProps {
   reviews: Review[];
 }
 
-export default function SilgampassPage({ reviews }: SilgampassPageProps) {
+export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
   const section8Ref = createRef<HTMLDivElement>();
   const isFirstPeriod = new Date() < new Date("2024-04-01T00:00:00+09:00");
 
