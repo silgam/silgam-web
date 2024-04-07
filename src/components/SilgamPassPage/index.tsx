@@ -12,8 +12,8 @@ import section5Image from "@/static/images/pass_page/sections/section5.png";
 import section6Image from "@/static/images/pass_page/sections/section6.png";
 import section7Image from "@/static/images/pass_page/sections/section7.png";
 import section8Image from "@/static/images/pass_page/sections/section8.png";
-import section9ImageFirst from "@/static/images/pass_page/sections/section9_20240328.png";
-import section9ImageSecond from "@/static/images/pass_page/sections/section9_20240401.png";
+import section9ImageBefore from "@/static/images/pass_page/sections/section9_20240328.png";
+import section9ImageAfter from "@/static/images/pass_page/sections/section9_20240401.png";
 import section10Image from "@/static/images/pass_page/sections/section10.png";
 
 import * as Styled from "./index.styled";
@@ -30,7 +30,7 @@ export interface SilgampassPageProps {
 
 export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
   const section8Ref = createRef<HTMLDivElement>();
-  const isFirstPeriod = new Date() < new Date("2024-04-01T00:00:00+09:00");
+  const isBefore = new Date() < new Date("2024-04-01T00:00:00+09:00");
 
   useEffect(() => {
     const onContextMenu = (e: MouseEvent) => {
@@ -93,7 +93,7 @@ export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
         </Styled.Section>
         <Styled.Section>
           <Styled.SectionImage
-            src={isFirstPeriod ? section9ImageFirst : section9ImageSecond}
+            src={isBefore ? section9ImageBefore : section9ImageAfter}
             alt="section"
           />
           <Styled.ImageButtonPurchase
