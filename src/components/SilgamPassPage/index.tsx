@@ -1,7 +1,9 @@
+import { useRouter } from "next/router";
 import Script from "next/script";
 import { createRef, useEffect } from "react";
 
 import ReviewSection, { Review } from "@/components/ReviewSection";
+import { ROUTES } from "@/consts/routes";
 import purchaseButtonImage from "@/static/images/pass_page/button_purchase.png";
 import trialButtonImage from "@/static/images/pass_page/button_trial.png";
 import section1Image from "@/static/images/pass_page/sections/section1.png";
@@ -29,6 +31,8 @@ export interface SilgampassPageProps {
 }
 
 export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
+  const router = useRouter();
+
   const section8Ref = createRef<HTMLDivElement>();
   const isBefore = new Date() < new Date("2024-04-01T00:00:00+09:00");
 
@@ -54,11 +58,21 @@ export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
   }, []);
 
   const purchase = () => {
-    window.FlutterWebView?.postMessage("purchase");
+    const webView = window.FlutterWebView;
+    if (webView) {
+      webView.postMessage("purchase");
+    } else {
+      router.push(ROUTES.DOWNLOAD);
+    }
   };
 
   const trial = () => {
-    window.FlutterWebView?.postMessage("trial");
+    const webView = window.FlutterWebView;
+    if (webView) {
+      webView.postMessage("trial");
+    } else {
+      router.push(ROUTES.DOWNLOAD);
+    }
   };
 
   return (
