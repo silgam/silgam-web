@@ -5,7 +5,8 @@
       "namespace": "android_app",
       "package_name": "com.seunghyun.silgam",
       "sha256_cert_fingerprints": [
-        "74:A3:D0:5B:C1:1C:A1:A0:36:07:06:A2:BB:EB:30:D4:73:2B:ED:C4:BE:7B:AB:7E:2F:08:DF:67:D4:8B:50:46"
+        "74:A3:D0:5B:C1:1C:A1:A0:36:07:06:A2:BB:EB:30:D4:73:2B:ED:C4:BE:7B:AB:7E:2F:08:DF:67:D4:8B:50:46",
+        "E7:76:0D:CC:AA:57:7F:B5:CA:21:31:FA:30:3A:B4:46:DB:9C:A1:95:AD:3F:6E:69:83:5A:41:60:9F:61:D8:3A"
       ]
     }
   }
