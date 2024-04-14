@@ -4,11 +4,11 @@
       {
         "appID": "87ZZJ2ADTX.com.seunghyun.silgam",
         "paths": [
-          "*"
+          "/products/silgampass"
         ],
         "components": [
           {
-            "/": "*"
+            "/": "/products/silgampass"
           }
         ]
       }
