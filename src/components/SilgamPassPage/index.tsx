@@ -6,7 +6,8 @@ import ReviewSection, { Review } from "@/components/ReviewSection";
 import { ROUTES } from "@/consts/routes";
 import purchaseButtonImage from "@/static/images/pass_page/button_purchase.png";
 import trialButtonImage from "@/static/images/pass_page/button_trial.png";
-import section1Image from "@/static/images/pass_page/sections/section1.png";
+import section1ImageBefore from "@/static/images/pass_page/sections/section1_20240401.png";
+import section1ImageAfter from "@/static/images/pass_page/sections/section1_20240509.png";
 import section2Image from "@/static/images/pass_page/sections/section2.png";
 import section3Image from "@/static/images/pass_page/sections/section3.png";
 import section4Image from "@/static/images/pass_page/sections/section4.png";
@@ -14,8 +15,8 @@ import section5Image from "@/static/images/pass_page/sections/section5.png";
 import section6Image from "@/static/images/pass_page/sections/section6.png";
 import section7Image from "@/static/images/pass_page/sections/section7.png";
 import section8Image from "@/static/images/pass_page/sections/section8.png";
-import section9ImageBefore from "@/static/images/pass_page/sections/section9_20240328.png";
-import section9ImageAfter from "@/static/images/pass_page/sections/section9_20240401.png";
+import section9ImageBefore from "@/static/images/pass_page/sections/section9_20240401.png";
+import section9ImageAfter from "@/static/images/pass_page/sections/section9_20240509.png";
 import section10Image from "@/static/images/pass_page/sections/section10.png";
 
 import * as Styled from "./index.styled";
@@ -34,7 +35,7 @@ export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
   const router = useRouter();
 
   const section8Ref = createRef<HTMLDivElement>();
-  const isBefore = new Date() < new Date("2024-04-01T00:00:00+09:00");
+  const isBefore = new Date() < new Date("2024-05-09T00:00:00+09:00");
 
   useEffect(() => {
     const onContextMenu = (e: MouseEvent) => {
@@ -80,7 +81,10 @@ export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
       <Script src="/static/scripts/product_page.js" />
       <Styled.Container>
         <Styled.Section>
-          <Styled.SectionImage src={section1Image} alt="section" />
+          <Styled.SectionImage
+            src={isBefore ? section1ImageBefore : section1ImageAfter}
+            alt="section"
+          />
         </Styled.Section>
         <ReviewSection reviews={reviews} />
         <div style={{ height: "28px" }} />
