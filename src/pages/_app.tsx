@@ -10,7 +10,20 @@ import GlobalStyles from "@/styles/GlobalStyles";
 import { defaultTheme } from "@/styles/theme";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const blockKakaoInAppBrowser = () => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const targetUrl = window.location.href;
+
+    if (/kakaotalk/i.exec(userAgent)) {
+      window.location.href = `kakaotalk://web/openExternal?url=${encodeURIComponent(
+        targetUrl,
+      )}`;
+    }
+  };
+
   useEffect(() => {
+    blockKakaoInAppBrowser();
+
     const siteId = 3666393;
     const hotjarVersion = 6;
     Hotjar.init(siteId, hotjarVersion, {
