@@ -81,13 +81,25 @@ export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
     }
   };
 
+  const showCustomExamGuide = () => {
+    const webView = window.FlutterWebView;
+    if (webView) {
+      webView.postMessage("showCustomExamGuide");
+    } else {
+      window.open(ROUTES.DOWNLOAD, "_blank");
+    }
+  };
+
   return (
     <>
       <Script src="/static/scripts/product_page.js" />
       <Styled.Container>
         {flutterBuildNumber && flutterBuildNumber >= 999 ? (
           // TODO: 커스텀 과목 소개 추가
-          <Styled.Section>커스텀 과목 소개</Styled.Section>
+          <Styled.Section>
+            커스텀 과목 소개
+            <button onClick={showCustomExamGuide}>더 알아보기</button>
+          </Styled.Section>
         ) : null}
         <Styled.Section>
           <Styled.SectionImage
