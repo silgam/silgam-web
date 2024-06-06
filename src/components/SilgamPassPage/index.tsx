@@ -34,6 +34,11 @@ export interface SilgampassPageProps {
 export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
   const router = useRouter();
 
+  let flutterBuildNumber: number | undefined = Number(router.query.buildNumber);
+  if (isNaN(flutterBuildNumber)) {
+    flutterBuildNumber = undefined;
+  }
+
   const section8Ref = createRef<HTMLDivElement>();
   const isBefore = new Date() < new Date("2024-06-08T00:00:00+09:00");
 
@@ -80,6 +85,10 @@ export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
     <>
       <Script src="/static/scripts/product_page.js" />
       <Styled.Container>
+        {flutterBuildNumber && flutterBuildNumber >= 999 ? (
+          // TODO: 커스텀 과목 소개 추가
+          <Styled.Section>커스텀 과목 소개</Styled.Section>
+        ) : null}
         <Styled.Section>
           <Styled.SectionImage
             src={isBefore ? section1ImageBefore : section1ImageAfter}
