@@ -68,7 +68,7 @@ export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
     if (webView) {
       webView.postMessage("purchase");
     } else {
-      router.push(ROUTES.DOWNLOAD);
+      window.open(ROUTES.DOWNLOAD, "_blank");
     }
   };
 
@@ -77,7 +77,7 @@ export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
     if (webView) {
       webView.postMessage("trial");
     } else {
-      router.push(ROUTES.DOWNLOAD);
+      window.open(ROUTES.DOWNLOAD, "_blank");
     }
   };
 
