@@ -107,17 +107,12 @@ export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
         <Styled.Section>
           <Styled.SectionImage src={section2Image} alt="section" />
         </Styled.Section>
-        {isCustomExamAvailable ? (
-          <Styled.Section
-            onClick={showCustomExamGuide}
-            style={{ cursor: "pointer" }}
-          >
-            <Styled.SectionImage
-              src={sectionCustomSubjectImage}
-              alt="section"
-            />
-          </Styled.Section>
-        ) : null}
+        <Styled.Section
+          onClick={showCustomExamGuide}
+          style={{ cursor: "pointer" }}
+        >
+          <Styled.SectionImage src={sectionCustomSubjectImage} alt="section" />
+        </Styled.Section>
         <Styled.Section>
           <Styled.SectionImage src={section3Image} alt="section" />
         </Styled.Section>
