@@ -6,6 +6,7 @@ import ReviewSection, { Review } from "@/components/ReviewSection";
 import { ROUTES } from "@/consts/routes";
 import purchaseButtonImage from "@/static/images/pass_page/button_purchase.png";
 import trialButtonImage from "@/static/images/pass_page/button_trial.png";
+import sectionCustomSubjectImage from "@/static/images/pass_page/sections/section_custom_subject.png";
 import section1ImageBefore from "@/static/images/pass_page/sections/section1_20240604.png";
 import section1ImageAfter from "@/static/images/pass_page/sections/section1_20240608.png";
 import section2Image from "@/static/images/pass_page/sections/section2.png";
@@ -38,6 +39,7 @@ export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
   if (isNaN(flutterBuildNumber)) {
     flutterBuildNumber = undefined;
   }
+  const isCustomExamAvailable = flutterBuildNumber && flutterBuildNumber >= 95;
 
   const section8Ref = createRef<HTMLDivElement>();
   const isBefore = new Date() < new Date("2024-06-08T00:00:00+09:00");
@@ -83,7 +85,7 @@ export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
 
   const showCustomExamGuide = () => {
     const webView = window.FlutterWebView;
-    if (webView) {
+    if (webView && isCustomExamAvailable) {
       webView.postMessage("showCustomExamGuide");
     } else {
       window.open(ROUTES.DOWNLOAD, "_blank");
@@ -94,13 +96,6 @@ export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
     <>
       <Script src="/static/scripts/product_page.js" />
       <Styled.Container>
-        {flutterBuildNumber && flutterBuildNumber >= 999 ? (
-          // TODO: 커스텀 과목 소개 추가
-          <Styled.Section>
-            커스텀 과목 소개
-            <button onClick={showCustomExamGuide}>더 알아보기</button>
-          </Styled.Section>
-        ) : null}
         <Styled.Section>
           <Styled.SectionImage
             src={isBefore ? section1ImageBefore : section1ImageAfter}
@@ -112,6 +107,17 @@ export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
         <Styled.Section>
           <Styled.SectionImage src={section2Image} alt="section" />
         </Styled.Section>
+        {isCustomExamAvailable ? (
+          <Styled.Section
+            onClick={showCustomExamGuide}
+            style={{ cursor: "pointer" }}
+          >
+            <Styled.SectionImage
+              src={sectionCustomSubjectImage}
+              alt="section"
+            />
+          </Styled.Section>
+        ) : null}
         <Styled.Section>
           <Styled.SectionImage src={section3Image} alt="section" />
         </Styled.Section>
