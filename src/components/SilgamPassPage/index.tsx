@@ -7,6 +7,7 @@ import { ROUTES } from "@/consts/routes";
 import purchaseButtonImage from "@/static/images/pass_page/button_purchase.png";
 import trialButtonImage from "@/static/images/pass_page/button_trial.png";
 import sectionCustomSubjectImage from "@/static/images/pass_page/sections/section_custom_subject.png";
+import sectionCustomSubjectImageNeedUpdate from "@/static/images/pass_page/sections/section_custom_subject_need_update.png";
 import section1ImageBefore from "@/static/images/pass_page/sections/section1_20240604.png";
 import section1ImageAfter from "@/static/images/pass_page/sections/section1_20240608.png";
 import section2Image from "@/static/images/pass_page/sections/section2.png";
@@ -85,7 +86,7 @@ export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
 
   const showCustomExamGuide = () => {
     const webView = window.FlutterWebView;
-    if (webView && isCustomExamAvailable) {
+    if (webView) {
       webView.postMessage("showCustomExamGuide");
     } else {
       window.open(ROUTES.DOWNLOAD, "_blank");
@@ -107,12 +108,24 @@ export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
         <Styled.Section>
           <Styled.SectionImage src={section2Image} alt="section" />
         </Styled.Section>
-        <Styled.Section
-          onClick={showCustomExamGuide}
-          style={{ cursor: "pointer" }}
-        >
-          <Styled.SectionImage src={sectionCustomSubjectImage} alt="section" />
-        </Styled.Section>
+        {isCustomExamAvailable ? (
+          <Styled.Section
+            onClick={showCustomExamGuide}
+            style={{ cursor: "pointer" }}
+          >
+            <Styled.SectionImage
+              src={sectionCustomSubjectImage}
+              alt="section"
+            />
+          </Styled.Section>
+        ) : (
+          <Styled.Section>
+            <Styled.SectionImage
+              src={sectionCustomSubjectImageNeedUpdate}
+              alt="section"
+            />
+          </Styled.Section>
+        )}
         <Styled.Section>
           <Styled.SectionImage src={section3Image} alt="section" />
         </Styled.Section>
