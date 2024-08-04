@@ -8,7 +8,7 @@ import purchaseButtonImage from "@/static/images/pass_page/button_purchase.png";
 import trialButtonImage from "@/static/images/pass_page/button_trial.png";
 import sectionCustomSubjectImage from "@/static/images/pass_page/sections/section_custom_subject.png";
 import sectionCustomSubjectImageNeedUpdate from "@/static/images/pass_page/sections/section_custom_subject_need_update.png";
-import section1ImageBefore from "@/static/images/pass_page/sections/section1_20240710.png";
+import section1ImageBefore from "@/static/images/pass_page/sections/section1_20240711.png";
 import section1ImageAfter from "@/static/images/pass_page/sections/section1_20240711.png";
 import section2Image from "@/static/images/pass_page/sections/section2.png";
 import section3Image from "@/static/images/pass_page/sections/section3.png";
@@ -17,8 +17,8 @@ import section5Image from "@/static/images/pass_page/sections/section5.png";
 import section6Image from "@/static/images/pass_page/sections/section6.png";
 import section7Image from "@/static/images/pass_page/sections/section7.png";
 import section8Image from "@/static/images/pass_page/sections/section8.png";
-import section9ImageBefore from "@/static/images/pass_page/sections/section9_20240710.png";
-import section9ImageAfter from "@/static/images/pass_page/sections/section9_20240711.png";
+import section9ImageBefore from "@/static/images/pass_page/sections/section9_20240711.png";
+import section9ImageAfter from "@/static/images/pass_page/sections/section9_20240806.png";
 import section10Image from "@/static/images/pass_page/sections/section10.png";
 
 import * as Styled from "./index.styled";
@@ -43,7 +43,7 @@ export default function SilgamPassPage({ reviews }: SilgampassPageProps) {
   const isCustomExamAvailable = flutterBuildNumber && flutterBuildNumber >= 95;
 
   const section8Ref = createRef<HTMLDivElement>();
-  const isBefore = new Date() < new Date("2024-07-11T00:00:00+09:00");
+  const isBefore = new Date() < new Date("2024-08-06T00:00:00+09:00");
 
   useEffect(() => {
     const onContextMenu = (e: MouseEvent) => {
